@@ -22,49 +22,51 @@
       <div on-tap="iconChange(5)" class="disable-user-behavior"><div class="content"></div></div>
       <!--ng-class="{true:'on',false:''}[icon_on==5]"-->
     </div>
-    <div class="top-music" ng-controller="MusicPlayer">
+    <div class="top-music">
       <audio id="media" src="/static/music/海楠 - 爱啦啦.mp3" controls=""></audio>
       <div class="t">
         <div class="mControl">
           <p class="musicTitle">海楠 - 爱啦啦</p>
           <div>
-            <span class="f_l ng-binding">0:0</span>
+            <span class="f_l ">{{val}}</span>
             <div class="range">
-              <input type="range" ng-change="progressChange()" id="range1" name="volume" ng-model="val" max="NaN" class="ng-pristine ng-valid ng-untouched ng-not-empty">
+              <input type="range" id="range1" name="volume" v-model="val" >
             </div>
-            <span class="f_r ng-binding">0:0</span>
+            <span class="f_r ">0:0</span>
           </div>
           <div class="playControl">
             <span class="prev"></span>
-            <span on-tap="play(this)" class="play"></span>
+            <span v-touch:tap="play" class="play"></span>
             <span class="next"></span>
           </div>
         </div>
 
       </div>
     </div>
-    <div class="top-weather" ng-controller="weatherInfo">
+    <div class="top-weather">
       <!-- <img src="../img/home/weather.png" alt=""> -->
-      <ul on-tap="active=true" class="disable-user-behavior">
+      <ul v-touch:tap="weatherShow.bind(this, true)">
         <li class="nowWeather">
           <h2>26°</h2>
           <p>微风，多云转小雨</p>
         </li>
-        <!-- ngRepeat: val in weatherData --><!-- ngIf: $index !=0 --><!-- end ngRepeat: val in weatherData --><!-- ngIf: $index !=0 --><li ng-repeat="val in weatherData" ng-if="$index !=0" class="">
+        <li ng-repeat="val in weatherData" ng-if="$index !=0" class="">
           <p>周六</p>
           <p class="img"></p>
           <p>22°/26°</p>
-        </li><!-- end ngIf: $index !=0 --><!-- end ngRepeat: val in weatherData --><!-- ngIf: $index !=0 --><li ng-repeat="val in weatherData" ng-if="$index !=0" class="">
+        </li>
+        <li ng-repeat="val in weatherData" ng-if="$index !=0" class="">
           <p>周日</p>
           <p class="img"></p>
           <p>22°/25°</p>
-        </li><!-- end ngIf: $index !=0 --><!-- end ngRepeat: val in weatherData --><!-- ngIf: $index !=0 --><li ng-repeat="val in weatherData" ng-if="$index !=0" class="">
+        </li>
+        <li ng-repeat="val in weatherData" ng-if="$index !=0" class="">
           <p>周一</p>
           <p class="img"></p>
           <p>21°/25°</p>
-        </li><!-- end ngIf: $index !=0 --><!-- end ngRepeat: val in weatherData -->
+        </li>
       </ul>
-      <div class="weatherInfo" ng-class="{true:'active',false:''}[active==true]" on-swipe-right="active = false;">
+      <div class="weatherInfo" :class="weatherDetails?'active':''" v-touch:swiperight="weatherShow.bind(this, false)">
         <div class="city">
           <h5>珠海</h5>
           <span>多云</span>
@@ -156,6 +158,25 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
+  data () {
+    return {
+      weatherDetails: false
+    }
+  },
+  methods: {
+    weatherShow (status) {
+      console.log(123)
+      this.weatherDetails = status
+    },
+    play () {
+      if (document.getElementById('media').paused === true) {
+        document.getElementById('media').play()
+      } else {
+        document.getElementById('media').pause()
+      }
+    }
+  }
 }
 </script>

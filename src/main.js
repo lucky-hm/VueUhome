@@ -17,6 +17,7 @@ new Vue({
   el: '#uHome',
   router,
   store,
+  VueTouch,
   components: { index },
   computed: {
     enter () {

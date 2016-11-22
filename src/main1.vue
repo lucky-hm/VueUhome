@@ -12,11 +12,10 @@
         </ul>
       </div>
 
-
       <!--右边内容栏-->
       <div class="home-right-panel" ng-class="{true:'',false:'headHide'}[headShow==true]">
         <!--头部信息栏-->
-        <header></header>
+        <top></top>
 
         <!--内容栏-->
         <transition :enter-active-class="routerAnimate.enter" :leave-active-class="routerAnimate.leave">
@@ -27,34 +26,7 @@
       </div>
 
       <!--底部浮动切换栏-->
-      <div class="main-footer" :class="[footerShow ? 'footerShow': '']">
-            <div class="home-footer" v-touch:tap="footerChange.bind(this, true)">
-              <ul class="footer-circle">
-                <router-link class="home-footer-active" to="/main/home" tag="li"><div class="l"></div><div class="r"></div></router-link>
-                <router-link v-touch:tap="addNote" class="home-footer-active" to="/main/society" tag="li"><div class="l"></div><div class="r"></div></router-link>
-                <router-link class="home-footer-active" to="/main/life" tag="li"><div class="l"></div><div class="r"></div></router-link>
-                <router-link class="home-footer-active" to="/main/neighbor" tag="li"><div class="l"></div><div class="r"></div></router-link>
-              </ul>
-              <ul>
-                <li>家</li>
-                <li>社</li>
-                <li>生</li>
-                <li>邻</li>
-              </ul>
-              <div class="footerCircle"><div class="l"></div></div>
-            </div>
-
-            <div class="footernav" :class="[footerShow ? '': 'footerShow']">
-              <a class="goHome" href="javascript:void(0);"></a>
-              <a class="leaveHome" href="javascript:void(0);"></a>
-              <a class="elevator" href="javascript:void(0);"></a>
-              <a class="unlock" href="javascript:void(0);"></a>
-              <a class="monitoring" href="javascript:void(0);"></a>
-              <a class="safe" href="javascript:void(0);"></a>
-            </div>
-            <div class="shade" v-touch:tap="footerChange.bind(this, false)">
-            </div>
-      </div>
+      <bottom></bottom>
     </div>
       <!-- <div class="welcome-bg">
       </div>
@@ -75,21 +47,12 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import header from './components/header.vue'
+import top from './components/header.vue'
+import bottom from './components/footer.vue'
 export default {
   computed: mapGetters([
     'routerAnimate'
   ]),
-  components: { header },
-  data () {
-    return {
-      footerShow: false
-    }
-  },
-  methods: {
-    footerChange (status) {
-      this.footerShow = status
-    }
-  }
+  components: { top, bottom }
 }
 </script>
