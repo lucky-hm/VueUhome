@@ -13,7 +13,7 @@
       </div>
 
       <!--右边内容栏-->
-      <div class="home-right-panel" ng-class="{true:'',false:'headHide'}[headShow==true]">
+      <div class="home-right-panel" :class="headerShow?'':'headHide'" >
         <!--头部信息栏-->
         <top></top>
 
@@ -51,7 +51,8 @@ import top from './components/header.vue'
 import bottom from './components/footer.vue'
 export default {
   computed: mapGetters([
-    'routerAnimate'
+    'routerAnimate',
+    'headerShow'
   ]),
   components: { top, bottom }
 }

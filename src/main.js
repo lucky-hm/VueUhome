@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
 import VueTouch from '../lib/vue-touch'
 import routes from './routers'
 import store from './store'
 import index from './index.vue'
 Vue.use(VueRouter)
+Vue.use(VueResource)
 Vue.use(VueTouch)
 
 const router = new VueRouter({

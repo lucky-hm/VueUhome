@@ -80,7 +80,7 @@
 
       <ul class="device" :class="roomName+'Device'">
         <!-- ngRepeat: (key,val) in nowDevice -->
-        <li :class="val+' '+key[3]" v-for="(key,val) in nowRoomDevice">
+        <li @click="changeDevice(key)" :class="val+' '+key[3]" v-for="(key,val) in nowRoomDevice">
           <label class="room-switch-title">{{key[0]}}</label>
         </li>
       </ul>
@@ -91,7 +91,7 @@
 
 </template>
 <script type="text/javascript">
-module.exports = {
+export default {
   data () {
     return {
       roomName: '',
@@ -178,6 +178,22 @@ module.exports = {
     positionRoom (x) {
       this.roomName = x
       this.nowRoomDevice = this.model302[x]
+    },
+    changeDevice (nowDevice) {
+      var deviceId = nowDevice[1]
+      var value = nowDevice[2]
+      value === '0000' ? value = '00ff' : value = '0000'
+      this.$http({
+        method: 'POST',
+        url: 'http://139.196.115.11:3000/control',
+        data: {'room_id': '302', 'deviceId': deviceId, 'value': value},
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        emulateJSON: true
+      }).then(function (data) {
+        console.log(data)
+      }, function (error) {
+        console.log(error)
+      })
     }
   }
 }

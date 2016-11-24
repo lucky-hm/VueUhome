@@ -2,7 +2,7 @@
   <div class="home-header">
     <div class="top-logo"></div>
     <div class="top-date">
-      <span>2016年11月18日</span>
+      <span contenteditable="true">2016年11月18日</span>
       <div class="content">
         <img src="/static/img/home/calendar.png" alt="">
         <div class="activity">
@@ -23,16 +23,16 @@
       <!--ng-class="{true:'on',false:''}[icon_on==5]"-->
     </div>
     <div class="top-music">
-      <audio id="media" src="/static/music/海楠 - 爱啦啦.mp3" controls=""></audio>
+      <audio v-on:loadedmetadata="loadedmetadata()" v-on:timeupdate="timeupdate()" id="media" src="/static/music/海楠 - 爱啦啦.mp3" controls=""></audio>
       <div class="t">
         <div class="mControl">
           <p class="musicTitle">海楠 - 爱啦啦</p>
           <div>
-            <span class="f_l ">{{val}}</span>
+            <span class="f_l ">{{currentTime|minutes}}</span>
             <div class="range">
-              <input type="range" id="range1" name="volume" v-model="val" >
+              <input v-on:change="timeset()" type="range" id="range1" name="volume" v-model="currentTime" >
             </div>
-            <span class="f_r ">0:0</span>
+            <span class="f_r ">{{duration|minutes}}</span>
           </div>
           <div class="playControl">
             <span class="prev"></span>
@@ -158,24 +158,48 @@
 </template>
 
 <script>
-/* eslint-disable */
 export default {
   data () {
     return {
-      weatherDetails: false
+      weatherDetails: false,
+      currentTime: '0',
+      duration: '0'
     }
   },
   methods: {
     weatherShow (status) {
-      console.log(123)
       this.weatherDetails = status
     },
+    loadedmetadata () {
+      let audio = document.getElementById('media')
+      this.duration = audio.duration
+    },
     play () {
-      if (document.getElementById('media').paused === true) {
-        document.getElementById('media').play()
+      let audio = document.getElementById('media')
+      this.timeset()
+      if (audio.paused === true) {
+        audio.play()
       } else {
-        document.getElementById('media').pause()
+        audio.pause()
       }
+    },
+    timeupdate () {
+      let audio = document.getElementById('media')
+      this.currentTime = audio.currentTime
+    },
+    timeset () {
+      let audio = document.getElementById('media')
+      audio.currentTime = this.currentTime
+    }
+  },
+  filters: {
+    minutes (val) {
+      val = val || 0
+      var output = ''
+      var h = (val / 60).toFixed(0)
+      var s = (Number(val).toFixed(0)) % 60
+      output = h + ':' + s
+      return output
     }
   }
 }
