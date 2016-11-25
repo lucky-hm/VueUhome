@@ -2,10 +2,10 @@
   <div class="main-footer" :class="[footerShow ? 'footerShow': '']">
         <div class="home-footer" v-touch:tap="footerChange.bind(this, true)">
           <ul class="footer-circle">
-            <router-link v-touch:tap="changeModule.bind(this,1)" :class="nowModule==1?'home-footer-active':''" to="/main/home" tag="li"><div class="border"><div class="l"></div><div class="r"></div></div><span>家</span></router-link>
-            <router-link v-touch:tap="changeModule.bind(this,2)" :class="nowModule==2?'home-footer-active':''" to="/main/society" tag="li"><div class="border"><div class="l"></div><div class="r"></div></div><span>社</span></router-link>
-            <router-link v-touch:tap="changeModule.bind(this,3)" :class="nowModule==3?'home-footer-active':''" to="/main/life" tag="li"><div class="border"><div class="l"></div><div class="r"></div></div><span>生</span></router-link>
-            <router-link v-touch:tap="changeModule.bind(this,4)" :class="nowModule==4?'home-footer-active':''" to="/main/neighbor" tag="li"><div class="border"><div class="l"></div><div class="r"></div></div><span>邻</span></router-link>
+            <router-link v-touch:tap="changeModule.bind(this,1)" to="/main/home" tag="li"><div class="border"><div class="l"></div><div class="r"></div></div><span>家</span></router-link>
+            <router-link v-touch:tap="changeModule.bind(this,2)" to="/main/society" tag="li"><div class="border"><div class="l"></div><div class="r"></div></div><span>社</span></router-link>
+            <router-link v-touch:tap="changeModule.bind(this,3)" to="/main/life" tag="li"><div class="border"><div class="l"></div><div class="r"></div></div><span>生</span></router-link>
+            <router-link v-touch:tap="changeModule.bind(this,4)" to="/main/neighbor" tag="li"><div class="border"><div class="l"></div><div class="r"></div></div><span>邻</span></router-link>
           </ul>
           <div class="footerCircle"><div class="l"></div></div>
         </div>

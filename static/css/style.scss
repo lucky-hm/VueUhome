@@ -22,7 +22,7 @@ body {
 /*房间公共类*/
 .mainContent {
   background: url("../img/home/bg.png") no-repeat center center;
-  -webkit-overflow-scrolling : touch;  overflow: auto;
+  -webkit-overflow-scrolling : touch;  overflow: auto;position: relative;
   /*-webkit-animation:blur 1s ease;*/
   .map {
     position: absolute;z-index: 5;
@@ -91,7 +91,7 @@ body {
     border: 5px solid #ccc;
     border-radius: 50%;
     position: relative;
-    &.home-footer-active {
+    &.router-link-active {
       .border{
         animation-play-state: running;
         -webkit-animation-play-state: running;
@@ -862,13 +862,12 @@ body {
 }
 
 #life {
-  /*
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
-  -webkit-box-orient: vertical;*/
   width: 100%;
   min-height: 100%;overflow: auto;
   background: url(../img/home/bg.png) no-repeat;
+  .mainContent{
+    -webkit-overflow-scrolling: touch;
+  }
   .life-img{
     width:100%;
     .img{
@@ -1074,7 +1073,7 @@ body {
         background:url(../img/home/lin_t3.png) no-repeat left top;
         background-size:100% 100%;
         .chatContet{
-              height: 75%;width: 77%;top: 2%;color:#fff;
+              height: 75%;width: 77%;top: 2%;color:#fff;overflow:auto;-webkit-overflow-scrolling: touch;
               left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);
               .f_l,.f_r{
                 width:100%;animation:InfoFadeIn .5s ease;-webkit-animation:InfoFadeIn .5s ease;

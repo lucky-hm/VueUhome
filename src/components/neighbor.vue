@@ -71,19 +71,15 @@
           </div>
           <div class="chat_info2">
             <div class="chatContet scroll-content ionic-scroll">
-              <div ng-repeat="item in datas" class="f_l">
-                <img src="/static/img/home/test.png" alt="">
-                <div class="dib">你在哪里？</div>
-              </div>
-              <div ng-repeat="item in datas" class="f_r">
-                <img src="/static/img/home/test1.png" alt="">
-                <div class="dib">我在珠海周末要不要聚一聚？</div>
+              <div v-for="item in gg" :class="item.who == 0 ? 'f_l' : 'f_r'">
+                <img :src="item.headImg" alt="">
+                <div class="dib">{{item.info}}</div>
               </div>
             </div>
             <div class="input">
               <button class="camera"></button>
               <div id="sendInfo" class="dib" contenteditable="true" placeholder="iMessage"></div>
-              <button class="send" ng-click="send()">发送</button>
+              <button class="send" v-touch:tap="sendInfo">发送</button>
             </div>
           </div>
 
@@ -100,8 +96,25 @@
       this.changeHeaderStatus(false)
       this.changeFooterStatus(false)
     },
+    data () {
+      return {
+        gg: [
+          {'who': 0, 'info': '你在哪里？', 'headImg': '/static/img/home/test.png'},
+          {'who': 1, 'info': '我在珠海周末要不要聚一聚？', 'headImg': '/static/img/home/test1.png'}
+        ]
+      }
+    },
     methods: {
-      ...mapActions(['changeHeaderStatus', 'changeFooterStatus'])
+      ...mapActions(['changeHeaderStatus', 'changeFooterStatus']),
+      sendInfo () {
+        let inpt = document.getElementById('sendInfo')
+        if (inpt.innerHTML === '') {
+          return false
+        }
+        let obj = {'who': 1, 'info': inpt.innerHTML, 'headImg': '/static/img/home/test1.png'}
+        this.gg.push(obj)
+        inpt.innerHTML = ''
+      }
     }
   }
 </script>
