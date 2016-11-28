@@ -33,9 +33,10 @@
   export default{
     created () {
       this.changeFooterStatus(false)
+      this.changeHeaderStatus(true)
     },
     methods: {
-      ...mapActions(['changeFooterStatus'])
+      ...mapActions(['changeFooterStatus', 'changeHeaderStatus'])
     }
   }
 </script>

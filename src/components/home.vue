@@ -86,12 +86,16 @@
       </ul>
 
     </div>
-
   </div>
 
 </template>
 <script type="text/javascript">
+import { mapActions } from 'vuex'
 export default {
+  created () {
+    this.changeFooterStatus(true)
+    this.changeHeaderStatus(true)
+  },
   data () {
     return {
       roomName: '',
@@ -183,18 +187,17 @@ export default {
       var deviceId = nowDevice[1]
       var value = nowDevice[2]
       value === '0000' ? value = '00ff' : value = '0000'
-      this.$http({
-        method: 'POST',
-        url: 'http://139.196.115.11:3000/control',
-        data: {'room_id': '302', 'deviceId': deviceId, 'value': value},
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        emulateJSON: true
-      }).then(function (data) {
-        console.log(data)
-      }, function (error) {
-        console.log(error)
+      this.$http.post(
+        'http://139.196.115.11:3000/control',
+        {room_id: '302', deviceId: deviceId, value: value},
+        {emulateJSON: true}
+      ).then((response) => {
+        console.log(response)
+      }, (response) => {
+        console.log(response)
       })
-    }
+    },
+    ...mapActions(['changeFooterStatus', 'changeHeaderStatus'])
   }
 }
 </script>

@@ -27,6 +27,7 @@
   export default{
     created () {
       this.changeFooterStatus(false)
+      this.changeHeaderStatus(true)
     },
     data () {
       return {
@@ -38,7 +39,7 @@
       }
     },
     methods: {
-      ...mapActions(['changeFooterStatus']),
+      ...mapActions(['changeFooterStatus', 'changeHeaderStatus']),
       showMonitoring (index) {
         this.MonitoringName = index
         this.MonitoringStatus = true

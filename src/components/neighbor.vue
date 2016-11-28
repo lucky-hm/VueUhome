@@ -73,7 +73,7 @@
             <div class="chatContet scroll-content ionic-scroll">
               <div v-for="item in gg" :class="item.who == 0 ? 'f_l' : 'f_r'">
                 <img :src="item.headImg" alt="">
-                <div class="dib">{{item.info}}</div>
+                <div class="dib" v-html="item.info"></div>
               </div>
             </div>
             <div class="input">

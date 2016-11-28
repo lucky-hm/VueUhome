@@ -17,13 +17,15 @@
     <div class="top-icon">
       <div on-tap="iconChange(1)" class="message"><i>2</i><div class="content"><img src="/static/img/home/infoCard.png" alt=""><div class="more"><div class="ac"></div><img src="/static/img/home/infoDetails.png" alt=""></div></div></div>
       <div on-tap="iconChange(2)" class="video"><div class="content"><img src="/static/img/home/video.png" alt=""><div class="addressBook"><img src="/static/img/home/video1.png" alt=""></div></div></div>
-      <div on-tap="iconChange(3)" class="disable-user-behavior"><div class="content"></div></div>
-      <div on-tap="iconChange(4)" class="disable-user-behavior"><div class="content"></div></div>
-      <div on-tap="iconChange(5)" class="disable-user-behavior"><div class="content"></div></div>
+      <div on-tap="iconChange(3)"><div class="content"></div></div>
+      <div on-tap="iconChange(4)"><div class="content"></div></div>
+      <div on-tap="iconChange(5)"><div class="content"></div></div>
       <!--ng-class="{true:'on',false:''}[icon_on==5]"-->
     </div>
     <div class="top-music">
-      <audio v-on:loadedmetadata="loadedmetadata()" v-on:timeupdate="timeupdate()" id="media" src="/static/music/海楠 - 爱啦啦.mp3" controls=""></audio>
+      <audio v-on:loadedmetadata="loadedmetadata()" v-on:timeupdate="timeupdate()" id="media" >
+        <source src="/static/music/海楠 - 爱啦啦.mp3" controls="" />
+      </audio>
       <div class="t">
         <div class="mControl">
           <p class="musicTitle">海楠 - 爱啦啦</p>
