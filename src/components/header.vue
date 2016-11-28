@@ -2,7 +2,7 @@
   <div class="home-header">
     <div class="top-logo"></div>
     <div class="top-date">
-      <span contenteditable="true">2016年11月18日</span>
+      <span>2016年11月18日</span>
       <div class="content">
         <img src="/static/img/home/calendar.png" alt="">
         <div class="activity">
