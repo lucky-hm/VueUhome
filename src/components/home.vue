@@ -80,7 +80,7 @@
 
       <ul class="device" :class="roomName+'Device'">
         <!-- ngRepeat: (key,val) in nowDevice -->
-        <li @click="changeDevice(key)" :class="val+' '+key[3]" v-for="(key,val) in nowRoomDevice">
+        <li @click="changeDevice(key,val)" :class="val+' '+key[3]+' '+(key[2]=='0000'?'':'open')" v-for="(key,val) in nowRoomDevice">
           <label class="room-switch-title">{{key[0]}}</label>
         </li>
       </ul>
@@ -183,16 +183,23 @@ export default {
       this.roomName = x
       this.nowRoomDevice = this.model302[x]
     },
-    changeDevice (nowDevice) {
+    changeDevice (nowDevice, index) {
+      var that = this
       var deviceId = nowDevice[1]
       var value = nowDevice[2]
       value === '0000' ? value = '00ff' : value = '0000'
       this.$http.post(
         'http://139.196.115.11:3000/control',
         {room_id: '302', deviceId: deviceId, value: value},
-        {emulateJSON: true}
-      ).then((response) => {
-        console.log(response)
+        {emulateJSON: true, emulateHTTP: true}
+      ).then((data) => {
+        data.json().then(function (re) {
+          if (re.code === 200) {
+            console.log(that)
+            that.$set(that.model302[that.roomName][index], 2, value)
+            // that.model302[that.roomName][index].splice(2, 1, value)
+          }
+        })
       }, (response) => {
         console.log(response)
       })

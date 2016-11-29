@@ -38,9 +38,6 @@ export default {
     'footerNavShow'
   ]),
   methods: {
-    shadeClick () {
-      console.log(1)
-    },
     footerChange (status) {
       this.footerShow = status
     },
