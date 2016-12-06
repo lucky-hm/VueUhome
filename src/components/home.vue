@@ -195,7 +195,6 @@ export default {
       ).then((data) => {
         data.json().then(function (re) {
           if (re.code === 200) {
-            console.log(that)
             that.$set(that.model302[that.roomName][index], 2, value)
             // that.model302[that.roomName][index].splice(2, 1, value)
           }
