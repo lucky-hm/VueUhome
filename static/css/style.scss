@@ -145,7 +145,7 @@
   position: absolute;
   /*left:0;*/
   top: 0;
-  z-index: 5;
+  z-index: 200;
   -webkit-animation: fadeInOut 5s ease forwards;
 }
 .welcome {
@@ -163,7 +163,7 @@
   color: #fff;
   font-size: 24px;
   -webkit-animation: fadeInOut 5s ease forwards;
-  z-index: 6;
+  z-index: 201;
   div {
     margin-top: 30px;
     span {
@@ -174,7 +174,7 @@
 }
 
 .main-left-menu {
-  background: url("../img/home/welcome_02.png") no-repeat;
+  background: url("../img/home/welcome_02.png") no-repeat -4px center;
   background-size: 100% 100%;
   width: 50px;
   height: 50px;
@@ -182,7 +182,7 @@
 }
 
 .main-left-users {
-  background: url("../img/home/welcome_08.png") no-repeat;
+  background: url("../img/home/welcome_08.png") no-repeat -4px center;
   background-size: 100% 100%;
   width: 50px;
   height: 50px;
@@ -191,7 +191,7 @@
 }
 
 .main-left-call {
-  background: url("../img/home/welcome_10.png") no-repeat;
+  background: url("../img/home/welcome_10.png") no-repeat -4px center;
   background-size: 100% 100%;
   width: 50px;
   height: 50px;
@@ -200,7 +200,7 @@
 }
 
 .main-left-exit {
-  background: url("../img/home/welcome_13.png") no-repeat;
+  background: url("../img/home/welcome_13.png") no-repeat -4px center;
   background-size: 100% 100%;
   width: 50px;
   height: 50px;
