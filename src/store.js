@@ -3,6 +3,9 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
+  user: {
+    account: 'test'
+  },
   routerAnimate: {
     enter: 'animated slideInRight',
     leave: 'animated slideOutLeft'
@@ -45,7 +48,8 @@ const actions = {
 const getters = {
   routerAnimate: state => state.routerAnimate,
   headerShow: state => state.headerShow,
-  footerNavShow: state => state.footerNavShow
+  footerNavShow: state => state.footerNavShow,
+  user: state => state.user
 }
 export default new Vuex.Store({
   state,

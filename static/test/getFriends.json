@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "name": "陈立翔",
+      "img": "clx.png",
+      "position": "前端工程师",
+      "area": "深圳市宝安区后瑞北三巷",
+      "phone": "07755559612",
+      "mobile": "15879077879",
+      "enable": true,
+      "records": [
+        {"who": 0, "info": "你在哪里？"},
+        {"who": 1, "info": "我在珠海周末要不要聚一聚？"}
+      ]
+    },
+    {
+      "name": "张林林",
+      "img": "zll.png",
+      "position": "后端工程师",
+      "area": "深圳市宝安区后瑞北三巷",
+      "phone": "07755559612",
+      "mobile": "13970000000",
+      "enable": true,
+      "records": [
+        {"who": 0, "info": "1111111"},
+        {"who": 1, "info": "222222222222"}
+      ]
+    },
+    {
+      "name": "郁伟强",
+      "img": "ywq.jpg",
+      "position": "前端工程师",
+      "area": "深圳市宝安区后瑞北三巷",
+      "phone": "07755559614",
+      "mobile": "13971111111",
+      "enable": true,
+      "records": [
+        {"who": 0, "info": "3333"},
+        {"who": 1, "info": "44444444444"}
+      ]
+    }
+  ]
+}

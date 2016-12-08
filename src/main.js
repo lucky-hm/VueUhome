@@ -23,7 +23,10 @@ new Vue({
   store,
   VueTouch,
   components: { index },
-  computed: {
+  created () {
+
+  },
+  methods: {
     enter () {
       return store.state.routerAnimate.enter
     },

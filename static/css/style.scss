@@ -1,4 +1,3 @@
-/*test*/
 @import 'animation.scss';
 @import 'animate.css';
 @import 'common.scss';
@@ -856,7 +855,7 @@
       .chat-list-item {
         height: 70px;line-height: 70px;position: relative;padding: 0 10px;
         background:transparent url(../img/home/line.png) repeat-x left bottom;background-size: auto 1px;
-        &:hover,&.active{
+        &.active{
           background-color:#01d6c4;
           .status{
             border:1px solid #fff;
@@ -883,12 +882,16 @@
           vertical-align: middle;
         }
         .dib{
-          vertical-align: middle;margin-left: 10px;
+          vertical-align: middle;margin-left: 10px;max-width:180px;
           p{
             color:#fff;margin:2px 0;line-height: 1.5;
             &.introduced{
               color:#00d5c3;font-size: 12px;background:url(../img/home/lin2.png) no-repeat left center;
               background-size:10px 15px;padding-left:18px;
+              overflow: hidden;
+              -ms-text-overflow: ellipsis;
+              text-overflow: ellipsis;
+              white-space:nowrap;
             }
           }
         }

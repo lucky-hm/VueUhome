@@ -89,7 +89,7 @@
   </div>
 
 </template>
-<script type="text/javascript">
+<script>
 import { mapActions } from 'vuex'
 export default {
   created () {
@@ -192,13 +192,13 @@ export default {
         'http://139.196.115.11:3000/control',
         {room_id: '302', deviceId: deviceId, value: value},
         {emulateJSON: true, emulateHTTP: true}
-      ).then((data) => {
-        data.json().then(function (re) {
-          if (re.code === 200) {
-            that.$set(that.model302[that.roomName][index], 2, value)
-            // that.model302[that.roomName][index].splice(2, 1, value)
-          }
-        })
+      ).then((re) => {
+        if (re.data.code === 200) {
+          that.$set(that.model302[that.roomName][index], 2, value)
+          // that.model302[that.roomName][index].splice(2, 1, value)
+        } else {
+          console.log(re.data)
+        }
       }, (response) => {
         console.log(response)
       })

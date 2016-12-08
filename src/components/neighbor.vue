@@ -72,7 +72,7 @@
     </div>
   </div>
 </template>
-<script type="text/javascript">
+<script>
   import { mapActions, mapGetters } from 'vuex'
   export default{
     created () {
@@ -123,10 +123,8 @@
         this.$http.get(
           '/static/test/getFriends.json',
           {emulateJSON: true, emulateHTTP: true}
-        ).then((data) => {
-          data.json().then(function (re) {
-            that.friendsList = re.data
-          })
+        ).then((re) => {
+          that.friendsList = re.data.data
         }, (response) => {
           console.log(response)
         })
