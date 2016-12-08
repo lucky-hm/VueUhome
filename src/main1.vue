@@ -28,19 +28,19 @@
       <!--底部浮动切换栏-->
       <bottom></bottom>
     </div>
-      <!-- <div class="welcome-bg">
+      <!--<div class="welcome-bg">
       </div>
       <div class="welcome">
-          <p>欢迎您</p>
-          <div class="f_l">
-            <p>尊敬的{{name}}</p>
-            <span>级别：云家会员</span>
-          </div>
-          <div class="f_r">
-            <p>你有一条消息未读</p>
-            <span>来自：物业管理处</span>
-          </div>
-        </div> -->
+        <p>欢迎您</p>
+        <div class="f_l">
+          <p>尊敬的{{name}}</p>
+          <span>级别：云家会员</span>
+        </div>
+        <div class="f_r">
+          <p>你有一条消息未读</p>
+          <span>来自：物业管理处</span>
+        </div>
+      </div>-->
   </div>
 
 </template>

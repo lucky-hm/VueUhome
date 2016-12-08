@@ -3,10 +3,10 @@
     <div class="mainContent pane society-group" >
         <div class="society-map">
           <ul>
-            <li @click="showMonitoring(1)">1</li>
-            <li @click="showMonitoring(2)">2</li>
-            <li @click="showMonitoring(3)">3</li>
-            <li @click="showMonitoring(4)">4</li>
+            <li v-touch:tap="showMonitoring.bind(this,1)">1</li>
+            <li v-touch:tap="showMonitoring.bind(this,2)">2</li>
+            <li v-touch:tap="showMonitoring.bind(this,3)">3</li>
+            <li v-touch:tap="showMonitoring.bind(this,4)">4</li>
           </ul>
           <div class="blur"></div>
         </div>
@@ -18,7 +18,7 @@
             <dt>报修<i class="edit" @click="showRepair()">我要报修</i></dt>
             <dd  class="repair">
               <h5>墙体维修</h5>
-              <p class="details">4月9日，8:00-10:00AM<span class="more" @click="showMore()">more</span></p>
+              <p class="details">4月9日，8:00-10:00AM<span class="more" @click="showMore">more</span></p>
               <p class="progress">
                 <span>客户报修</span>
                 <span>上门维修</span>
@@ -36,12 +36,12 @@
             <dt>活动</dt>
             <dd class="activity">
               <h5>羽毛球大赛召集中</h5>
-              <p class="details">8:00AM，4月9日社区羽毛球馆<span class="more" @click="showMore()">more</span></p>
+              <p class="details">8:00AM，4月9日社区羽毛球馆<span class="more" @click="showMore">more</span></p>
             </dd>
             <dt>通知</dt>
             <dd class="notice">
               <h5>停水通知</h5>
-              <p class="details">4月9日，上午8:00-上午10:00<span class="more" @click="showMore()">more</span></p>
+              <p class="details">4月9日，上午8:00-上午10:00<span class="more" @click="showMore">more</span></p>
             </dd>
             <dd class="else">
               <ul>

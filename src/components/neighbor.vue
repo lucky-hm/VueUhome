@@ -3,9 +3,9 @@
     <div class="mainContent pane" >
 
       <div class="chat-head">
-        <h2>邻里</h2>
+        <h2 @click="getFriends">邻里</h2>
         <div class="f_l">
-          <img src="/static/img/home/test.png" alt="">
+          <img src="/static/img/home/test1.png" alt="">
           <div class="dib">
             <p class="name">John</p>
             <p class="introduced">建筑设计师、A单元3306</p>
@@ -20,47 +20,30 @@
           星期一，June 9 2016
         </p>
       </h3>
-
       <div class="chat-group">
         <div class="chat-list">
           <div class="search">
             <button></button><input type="text" placeholder="搜索">
           </div>
-          <div class="chat-list-item">
-            <img src="/static/img/home/test1.png" alt="">
-            <div class="dib">
-              <p class="name">李露</p>
-              <p class="introduced">媒体记者，A单元1106</p>
-            </div>
-            <i class="status"></i>
-          </div>
-          <div class="chat-list-item active">
-            <img src="/static/img/home/test1.png" alt="">
-            <div class="dib">
-              <p class="name">李露</p>
-              <p class="introduced">媒体记者，A单元1106</p>
-            </div>
-            <i class="status"></i>
-          </div>
-          <div class="chat-list-item">
-            <img src="/static/img/home/test1.png" alt="">
-            <div class="dib">
-              <p class="name">李露</p>
-              <p class="introduced">媒体记者，A单元1106</p>
-            </div>
-            <i class="status"></i>
+          <div @click="i = index" :class="index === i ? 'active' : ''" class="chat-list-item" v-for="val,index in friendsList" >
+            <img :src="'/static/img/'+val.img" alt="">
+             <div class="dib">
+               <p class="name">{{val.name}}</p>
+               <p class="introduced">{{val.position}}，{{val.area}}</p>
+             </div>
+             <i class="status"></i>
           </div>
         </div>
         <div class="chat_content">
           <div class="chat_info1">
-            <img class="headImg" src="/static/img/home/test1.png" alt="">
+            <img class="headImg" :src="'/static/img/'+friendsList[i].img" alt="">
             <div class="dib">
-              <p class="name">胡小飞</p>
-              <p class="position">资深大客户经理</p>
-              <p class="area">A单元3306、中国深圳</p>
+              <p class="name">{{friendsList[i].name}}</p>
+              <p class="position">{{friendsList[i].position}}</p>
+              <p class="area">{{friendsList[i].area}}</p>
               <p class="contact">
-                <span class="tel1">0775 555 9612</span>
-                <span class="phone1">135 555 498</span>
+                <span class="tel1">{{friendsList[i].phone}}</span>
+                <span class="phone1">{{friendsList[i].mobile}}</span>
               </p>
               <div class="oper">
                 <button class="edt"></button>
@@ -71,8 +54,8 @@
           </div>
           <div class="chat_info2">
             <div class="chatContet scroll-content ionic-scroll">
-              <div v-for="item in gg" :class="item.who == 0 ? 'f_l' : 'f_r'">
-                <img :src="item.headImg" alt="">
+              <div v-for="item in friendsList[i].records" :class="item.who == 0 ? 'f_l' : 'f_r'">
+                <img :src="'/static/img/'+(item.who == 0 ? friendsList[i].img : 'home/test1.png')" alt="">
                 <div class="dib" v-html="item.info"></div>
               </div>
             </div>
@@ -90,18 +73,28 @@
   </div>
 </template>
 <script type="text/javascript">
-  import { mapActions } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
   export default{
     created () {
       this.changeHeaderStatus(false)
       this.changeFooterStatus(false)
     },
+    mounted () {
+      this.getFriends()
+    },
     data () {
       return {
-        gg: [
-          {'who': 0, 'info': '你在哪里？', 'headImg': '/static/img/home/test.png'},
-          {'who': 1, 'info': '我在珠海周末要不要聚一聚？', 'headImg': '/static/img/home/test1.png'}
-        ]
+        i: 0,
+        searchVal: '',
+        friendsList: [
+          {
+            names: '',
+            position: '',
+            area: '',
+            img: ''
+          }
+        ],
+        ...mapGetters(['user'])
       }
     },
     methods: {
@@ -112,8 +105,21 @@
           return false
         }
         let obj = {'who': 1, 'info': inpt.innerHTML, 'headImg': '/static/img/home/test1.png'}
-        this.gg.push(obj)
+        this.friendsList[this.i].records.push(obj)
         inpt.innerHTML = ''
+      },
+      getFriends () {
+        let that = this
+        this.$http.get(
+          '/static/test/getFriends.json',
+          {emulateJSON: true, emulateHTTP: true}
+        ).then((data) => {
+          data.json().then(function (re) {
+            that.friendsList = re.data
+          })
+        }, (response) => {
+          console.log(response)
+        })
       }
     }
   }
