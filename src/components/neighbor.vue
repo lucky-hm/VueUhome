@@ -23,9 +23,9 @@
       <div class="chat-group">
         <div class="chat-list">
           <div class="search">
-            <button></button><input type="text" placeholder="搜索">
+            <button></button><input v-on:input="searchFriends" v-model="searchVal" type="text" placeholder="搜索">
           </div>
-          <div @click="i = index" :class="index === i ? 'active' : ''" class="chat-list-item" v-for="val,index in friendsList" >
+          <div @click="i = index" :class="{'active':index === i,'hide':val.enable === false}" class="chat-list-item" v-for="val,index in friendsList" >
             <img :src="'/static/img/'+val.img" alt="">
              <div class="dib">
                <p class="name">{{val.name}}</p>
@@ -99,6 +99,16 @@
     },
     methods: {
       ...mapActions(['changeHeaderStatus', 'changeFooterStatus']),
+      searchFriends () {
+        let i
+        for (i = 0; i < this.friendsList.length; i++) {
+          if (this.friendsList[i].name.indexOf(this.searchVal) === -1 && this.friendsList[i].position.indexOf(this.searchVal) === -1) {
+            this.friendsList[i].enable = false
+          } else {
+            this.friendsList[i].enable = true
+          }
+        }
+      },
       sendInfo () {
         let inpt = document.getElementById('sendInfo')
         if (inpt.innerHTML === '') {
