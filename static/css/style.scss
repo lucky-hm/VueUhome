@@ -415,10 +415,10 @@
   width:218px;
   position:relative;
   color:#fff;font-size: 10px;
-  ul{
+  &>ul{
     white-space: nowrap;
   }
-  li{
+  &>ul li{
     display: inline-block;width:50px;text-align: center;
     border-right:1px solid #8d8e8e;line-height: 1;
     .img{
@@ -527,7 +527,7 @@
 
 .society-group {
   display: -webkit-flex;
-  width: 100%;
+  width: 100%;padding:18px 21px 37px 24px;
   height: 100%;
   background: url(../img/home/bg.png) no-repeat;
   .repairBtn{
@@ -536,17 +536,6 @@
     width: 25px;
     height: 25px;
     right: 132px;
-  }
-  .more{
-    position: absolute;
-    height: 13px;
-    width: 32px;
-    right: 0;
-    top: 0;
-    border: 1px solid #3da59b;
-    line-height: 11px;
-    font-size: 8px;
-    background: url(../img/home/arrow-right.png) no-repeat 97% center;
   }
   .Monitoring{
     -webkit-animation:InfoFadeIn .7s ease forwards;z-index: 100;
@@ -584,9 +573,10 @@
 }
 .society-map {
   position: relative;
+  border-radius:5px 0 0 5px;
   -webkit-flex-grow:10;
   height: 100%;
-  background: url("../img/home/community.png") no-repeat;
+  background: url("../img/home/shequMap.png") no-repeat;
   background-size: 100% 100%;
   left: 0;
   .blur{
@@ -597,8 +587,8 @@
     width: 218px;
   }
   li{
-    position: absolute;color:#fff;text-align: center;background: url(../img/home/community1.png) no-repeat;
-    background-size:39px 43px;width:39px;height:43px;line-height: 34px;
+    position: absolute;color:#fff;text-align: center;background: url(../img/home/camera.png) no-repeat;
+    background-size:29px 40px;width:29px;height:40px;line-height: 34px;
   }
   li:nth-child(1){
     top: 54%;
@@ -617,125 +607,76 @@
     left: 74%;
   }
 }
-
-.society-items {
-  width: 218px;position:relative;
-  height: 100%;
-  // background: url("../img/home/commnityNotic1.jpg") no-repeat;
-  background-color: rgba(23, 32, 39, 0.5);
-  background-size: 100% 100%;
-  .topTitle{
-    display:-webkit-flex;height:25px;
-    line-height: 25px;
-    li{
-      -webkit-flex-grow:2;height:100%;
-      margin:0 1px;
-      text-align: center;
-      &.ac{
-        background: -webkit-gradient(linear,center top,center bottom,from(#eaf0fc),to(#b4c0d9));
-      }
+.society-items{
+  border-radius:0 5px 5px 0;
+  background-color: #fff;
+  width:248px;padding:0 36px;
+  display:-webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  font-size:10px;
+  text-align: center;
+  h2{
+    text-align: center;color:#000;
+    font-size:24px;
+  }
+  .gprs {
+    background: url("../img/home/Sent Icon.png") no-repeat top center;
+    padding-top:26px;
+    margin:6px 0px 10px 0px;
+    color:#a8acb9;
+  }
+  li{
+   background-color: #fff;
+    img{
+      width:52px;
+      height:52px;
+      padding:1px;
+      border: 1px solid #5f6060;
+      -webkit-border-radius:50%;
+      -moz-border-radius:50%;
+      border-radius:50%;
     }
   }
-  dl{
-    padding:10px 4px 0 4px;
-    dt{
-      margin:22px 15px 0 15px;position:relative;
-      background-color:#3da59b;
-      color:#fff;
-      text-align:center;
-      display:inline-block;
-      width:62px;
-      letter-spacing: 2px;
-      font-size:10px;
-      .edit{
-        background: url(../img/home/Shape-3.png) no-repeat left center;
-        display: inline-block;
-        position: absolute;
-        font-style: normal;
-        left: 100%;
-        white-space: nowrap;
-        padding-left: 15px;
-        margin-left: 5px;
-      }
-    }
-    dd{
-      border-bottom:1px solid #737a72;padding:0 15px 20px 15px;
-      &.else{
-        border-bottom:0px;
-        margin-top: 60px;
-        color:#fff;font-size: 10px;
-        ul{
-          display:-webkit-flex;
-          li{
-            -webkit-flex-grow:2;
-            text-align: center;
-            padding-top:25px;
-            &:nth-child(1){
-              background: url(../img/home/wy.png) no-repeat 20px 0px;
-            }
-            &:nth-child(2){
-              background: url(../img/home/wy.png) no-repeat -40px 0px;
-            }
-            &:nth-child(3){
-              background: url(../img/home/wy.png) no-repeat -100px 0px;
-            }
-          }
-        }
-      }
-      h5{
-        color: #fff;
-        font-size: 18px;
-        margin-top: 15px;
-      }
-      .details{
-        color: #fff;
-        font-size: 10px;
-        margin-top: 8px;
-        position: relative;
-        text-indent: 4px;
-      }
-      .progress{
-        margin-top: 16px;
-        color: #fff;
-        font-size: 10px;
-        height: 22px;
-        border: 1px solid #777c80;
-        margin-top: 16px;
-        color: #fff;
-        font-size: 10px;
-        height: 22px;
-        background: url(../img/home/tab-bg.png) no-repeat;
-        border: 1px solid #777c80;
-        background-size: 66px 22px;
-        background-position: 46px -1px;
-        span{
-          line-height: 22px;
-          padding: 0 6.5px;
-        }
-      }
-      .repairMan{
-        color:#fff;
-        margin-top:4px;
-        font-size: 10px;
-        padding-left:14px;
-        color: #fff;
-        margin-top: 4px;
-        font-size: 10px;
-        padding-left: 16px;
-        background: url(../img/home/user.png) no-repeat left center;
-        i{
-          background: url(../img/home/Shape-56.png) no-repeat left center;
-          width: 10px;
-          display: inline-block;
-          height: 13px;
-          background-size: 10px 10px;
-          vertical-align: top;
-        }
-      }
-    }
+  .shake{
+    height:24px;
+    line-height:24px;
+    width:100%;
+    color:#333;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 2px #ccc;
+    background-color: #fff;
+    margin-top:42px;
+  }
+  textarea{
+    background-color:#eff0f4;
+    resize: none;
+    border:none;
+    height:94px;
+    padding:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    font-size:12px;
+    border-radius:5px;
+    text-align: left;
+    line-height:24px;
+    margin:33px 0 30px 0;
+    color:#000;
+  }
+  textarea::-webkit-input-placeholder {
+    color:#a8acb9;
+  }
+  button{
+    border:0;color:#fff;
+    background-color: #00d5c3;
+    width:80px;height:26px;
+    font-size:10px;
+    border-radius: 20px;
+    letter-spacing: 4px;
+    margin:0 auto;
   }
 }
-
 #life {
   width: 100%;
   min-height: 100%;overflow: auto;
@@ -1483,8 +1424,10 @@
 
 
 /* 天气侧边栏 */
-.weatherInfo{
-  *{margin:0;line-height: 1;color: rgba(255,255,255,.6);}
+.slideInfo {
+  font-size:14px;
+  background-color: rgba(23, 32, 39, 0.5);
+  background-size: 100% 100%;
   position: fixed;display:-webkit-flex;
   -webkit-flex-direction: column;
   right:0px;top:72px;
@@ -1499,140 +1442,272 @@
     transform: translateX(0%);
     -webkit-transform: translateX(0%);
   }
-  .city{
-    width:100%;height:87px;
-    background:url(../img/zhuhai_03.png) no-repeat;
-    background-size:100% 100%;text-align: center;
-    color:#fff;
-    display:-webkit-flex;-webkit-flex-direction: column;
+  .topTitle{
+    display:-webkit-flex;height:25px;
+    line-height: 25px;
+    li{
+      -webkit-flex-grow:2;height:100%;
+      margin:0 1px;
+      text-align: center;
 
-
-    -webkit-justify-content: center;
-    h5{
-      letter-spacing: 2px;
-      font-size: 16px;
+      background: -webkit-gradient(linear,center top,center bottom,from(#eaf0fc),to(#b4c0d9))
+    ;color:#333;
+      &.ac{
+        background: transparent;
+        color: #fff;
+      }
     }
-    &>span{
-      font-size: 10px;margin:5px 0;
+  }
+  .Information{
+    padding:10px 4px 0 4px;
+    dt{
+      margin:22px 15px 0 15px;position:relative;
+      background-color:#3da59b;
+      color:#fff;
+      text-align:center;
       display:inline-block;
+      width:62px;
+      letter-spacing: 2px;
+      font-size:10px;
+      .edit{
+        background: url(../img/home/Shape-3.png) no-repeat left center;
+        display: inline-block;
+        position: absolute;
+        font-style: normal;
+        left: 100%;
+        white-space: nowrap;
+        padding-left: 15px;
+        margin-left: 5px;
+      }
     }
-    h4{
-      color:#fff;font-size: 28px;font-weight: normal;
-      span{
-        font-size: 20px;color:#fff;
+    dd{
+      border-bottom:1px solid #737a72;padding:0 15px 20px 15px;
+      &.else{
+        border-bottom:0px;
+        margin-top: 60px;
+        color:#fff;font-size: 10px;
+        ul{
+          display:-webkit-flex;
+          li{
+            -webkit-flex-grow:2;
+            text-align: center;
+            padding-top:25px;
+            &:nth-child(1){
+              background: url(../img/home/wy.png) no-repeat 20px 0px;
+            }
+            &:nth-child(2){
+              background: url(../img/home/wy.png) no-repeat -40px 0px;
+            }
+            &:nth-child(3){
+              background: url(../img/home/wy.png) no-repeat -100px 0px;
+            }
+          }
+        }
+      }
+      h5{
+        color: #fff;
+        font-size: 18px;
+        margin-top: 15px;
+      }
+      .details{
+        color: #fff;
+        font-size: 10px;
+        margin-top: 8px;
+        position: relative;
+        text-indent: 4px;
+      }
+      .progress{
+        margin-top: 16px;
+        color: #fff;
+        font-size: 10px;
+        height: 22px;
+        border: 1px solid #777c80;
+        margin-top: 16px;
+        color: #fff;
+        font-size: 10px;
+        height: 22px;
+        background: url(../img/home/tab-bg.png) no-repeat;
+        border: 1px solid #777c80;
+        background-size: 66px 22px;
+        background-position: 46px -1px;
+        span{
+          line-height: 22px;
+          padding: 0 6.5px;
+        }
+      }
+      .repairMan{
+        color:#fff;
+        margin-top:4px;
+        font-size: 10px;
+        padding-left:14px;
+        color: #fff;
+        margin-top: 4px;
+        font-size: 10px;
+        padding-left: 16px;
+        background: url(../img/home/user.png) no-repeat left center;
+        i{
+          background: url(../img/home/Shape-56.png) no-repeat left center;
+          width: 10px;
+          display: inline-block;
+          height: 13px;
+          background-size: 10px 10px;
+          vertical-align: top;
+        }
       }
     }
   }
-  .weatherBg{
-    background: url(../img/weatherSilde.png) no-repeat;
-    background-size:100% 100%;
-    -webkit-flex-grow: 9;padding:0 5px;
-  }
-  .todayInfo{
-    border-bottom:1px solid rgba(255,255,255,.2);
-    padding:10px 7px;
-    &>p{
-      font-size: 12px;
-    }
-    ul{
-      margin-top: 20px;
-    }
-    li{
-      box-sizing: border-box;float:left;width:auto;
-      border-right:none;margin-right: 22px;
-      color:rgba(255,255,255,.2);
-      &:last-child{
-        margin-right: 0px;;
+  .weatherInfo{
+    padding-top:87px;
+    *{margin:0;line-height: 1;color: rgba(255,255,255,.6);}
+    .city{
+      position: absolute;
+      z-index: -1;
+      top:0;padding-top:25px;
+      width:100%;height:112px;
+      background:url(../img/zhuhai_03.png) no-repeat;
+      background-size:100% 100%;text-align: center;
+      color:#fff;
+      display:-webkit-flex;-webkit-flex-direction: column;
+      -webkit-justify-content: center;
+      h5{
+        letter-spacing: 2px;
+        font-size: 16px;
       }
-      i{
-        width:28px;height:28px;
-        background: url(../img/Free-Weather.png) no-repeat;
-        background-size:256px 189.6px;
-        background-position: -98px -20px;
+      &>span{
+        font-size: 10px;margin:5px 0;
+        display:inline-block;
       }
-      span,i{display: block;margin:0 auto;font-size: 10px;font-size: 12px;}
-      .time{font-size: 10px;}
-    }
-  }
-  .todayDetails{
-    padding:6px 7px 20px 7px;border-bottom:1px solid rgba(255,255,255,.2);
-    .f_l{
-      width:50%;height:100%;padding-top:4px;
-      background: url(../img/Free-Weather.png) no-repeat;
-      background-position: -107px -18px;
-      background-size: 767px 571px;position: absolute;
-      height:120px;
-      label{font-size: 12px;}
-    }
-    ul{
-      width:64%;float:right;margin-right:-15px
-    }
-    li{
-      line-height: 40px;display:block;width:auto;
-      padding-left: 28px;font-size: 12px;
-      border-right:none;border-bottom:1px dashed rgba(255,255,255,.2);
-      position: relative;
-      span{
-        font-size: 10px
-      }
-      &:after{
-        position: absolute;font-size: 10px;
-        left: 0;bottom:0;padding-top:12px;
-        width:35px;height:100%;
-        background: url(../img/Free-Weather.png) no-repeat;
-        background-size:256px 189.6px;
+      h4{
+        color:#fff;font-size: 28px;font-weight: normal;
+        span{
+          font-size: 20px;color:#fff;
+        }
       }
     }
-    .humidity:after{
-      content:'湿度';
-      background-position: -127px -20px;
+    .weatherBg{
+      background: url(../img/weatherSilde.png) no-repeat;
+      background-size:100% 100%;
+      -webkit-flex-grow: 9;padding:0 5px;
     }
-    .ultraviolet:after{
-      content:'紫外线';
-      background-position: -193px -20px;
-    }
-    .windDirection:after{
-      content:'风向';
-      background-position: -205px -116px;
-      background-size: 320px 237px;
-    }
-    .PM:after{
-      content:'PM2.5';
-      background-position: -194px -126px;
-    }
-  }
-  .last7{
-    ul{
-      margin-top: 20px;
-    }
-    li{
-      border-right:none;padding:0 5px;
-      display: block;line-height: 48px;width:100%;height:38px;
-      text-align: left;border-bottom:1px dashed rgba(255,255,255,.2);
-      label{
+    .todayInfo{
+      border-bottom:1px solid rgba(255,255,255,.2);
+      padding:10px 7px;
+      &>p{
         font-size: 12px;
       }
-      i{
-        display:inline-block;vertical-align: top;
-        margin-left: 32px;    margin-top: 8px;
-        width:28px;height:28px;line-height: 48px;
-        background: url(../img/Free-Weather.png) no-repeat;
-        background-size:256px 189.6px;
+      ul{
+        margin-top: 20px;width:194px;
       }
-      span{
-        float:right;line-height: 48px;font-size: 12px;
-        height:38px;padding-right: 5px;
-        em{
-          margin-left: 14px;color:rgba(5, 187, 233,.6);
+      li{
+        box-sizing: border-box;float:left;
+        border-right:none;margin-right: 27.3px;
+        color:rgba(255,255,255,.2);
+        text-align: center;
+        &:last-child{
+          margin-right: 0px;;
+        }
+        i{
+          width:28px;height:28px;
+          background: url(../img/Free-Weather.png) no-repeat;
+          background-size:256px 189.6px;
+          background-position: -98px -20px;
+        }
+        span,i{display: block;margin:0 auto;font-size: 10px;font-size: 12px;}
+        .time{font-size: 10px;}
+      }
+    }
+    .todayDetails{
+      padding:6px 7px 20px 7px;border-bottom:1px solid rgba(255,255,255,.2);
+      .f_l{
+        width:50%;height:100%;padding-top:4px;
+        background: url(../img/Free-Weather.png) no-repeat;
+        background-position: -107px -18px;
+        background-size: 767px 571px;position: absolute;
+        height:120px;
+        label{font-size: 12px;}
+      }
+      ul{
+        width:64%;float:right;margin-right:-15px
+      }
+      li{
+        line-height: 40px;display:block;width:auto;
+        padding-left: 28px;font-size: 12px;
+        border-right:none;border-bottom:1px dashed rgba(255,255,255,.2);
+        position: relative;
+        text-align: center;
+        span{
+          font-size: 10px
+        }
+        &:after{
+          position: absolute;font-size: 10px;
+          left: 0;bottom:0;padding-top:12px;
+          width:35px;height:100%;
+          background: url(../img/Free-Weather.png) no-repeat;
+          background-size:256px 189.6px;
         }
       }
-      &.sunny{
+      .humidity:after{
+        content:'湿度';
+        background-position: -127px -20px;
+      }
+      .ultraviolet:after{
+        content:'紫外线';
+        background-position: -193px -20px;
+      }
+      .windDirection:after{
+        content:'风向';
+        background-position: -205px -116px;
+        background-size: 320px 237px;
+      }
+      .PM:after{
+        content:'PM2.5';
+        background-position: -194px -126px;
+      }
+    }
+    .last7{
+      ul{
+        margin-top: 20px;
+      }
+      li{
+        border-right:none;padding:0 5px;
+        display: block;line-height: 48px;width:100%;height:38px;
+        text-align: left;border-bottom:1px dashed rgba(255,255,255,.2);
+        label{
+          font-size: 12px;
+        }
         i{
+          display:inline-block;vertical-align: top;
+          margin-left: 32px;    margin-top: 8px;
+          width:28px;height:28px;line-height: 48px;
+          background: url(../img/Free-Weather.png) no-repeat;
+          background-size:256px 189.6px;
+        }
+        span{
+          float:right;line-height: 48px;font-size: 12px;
+          height:38px;padding-right: 5px;
+          em{
+            margin-left: 14px;color:rgba(5, 187, 233,.6);
+          }
+        }
+        &.sunny{
+          i{
             background-position: -98px -20px;
             -webkit-animation:rotate 25s linear infinite;
+          }
         }
       }
     }
+  }
+  .more{
+    position: absolute;
+    height: 13px;
+    width: 32px;
+    right: 0;
+    top: 0;
+    border: 1px solid #3da59b;
+    line-height: 11px;
+    font-size: 8px;
+    background: url(../img/home/arrow-right.png) no-repeat 97% center;
   }
 }
 
@@ -1701,6 +1776,9 @@
       width:100%;background-color:#e7e7e4;line-height:32px;position:relative;
       margin-bottom:28px;overflow:auto;outline:none;
       max-height:99px;min-height:33px;
+      background: url("../img/home/line_.png") repeat left -7px;
+      border:0;
+      resize: none;
       &:after{
         content:' ';width:100%;height:1px;background-color:#ccc;
         position: absolute;left:0;top:32px;

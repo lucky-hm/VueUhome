@@ -52,94 +52,157 @@
             <p>{{val.temperature | fWeather}}</p>
         </li>
       </ul>
-      <div class="weatherInfo" :class="weatherDetails?'active':''" v-touch:swiperight="weatherShow.bind(this, false)">
-        <div class="city">
-          <h5>珠海</h5>
-          <span>多云</span>
-          <h4>28<span>℃</span></h4>
-        </div>
-        <div class="weatherBg">
-          <div class="todayInfo">
-            <p class="clearfix">
-              <span class="f_l">周四 11/17</span>
-              <span class="f_r">34&nbsp;-&nbsp;27</span>
-            </p>
-            <ul class="clearfix">
-              <li>
-                <span class="time">11am</span>
-                <i></i>
-                <span>30</span>
-              </li>
-              <li>
-                <span class="time">11am</span>
-                <i></i>
-                <span>30</span>
-              </li>
-              <li>
-                <span class="time">11am</span>
-                <i></i>
-                <span>30</span>
-              </li>
-              <li>
-                <span class="time">11am</span>
-                <i></i>
-                <span>30</span>
-              </li>
-            </ul>
+      <div class="slideInfo" :class="weatherDetails?'active':''" v-touch:swiperight="weatherShow.bind(this, false)">
+        <ul class="topTitle">
+          <li @click="tabControl = 0" :class="tabControl==0?'ac':''">天气</li>
+          <li @click="tabControl = 1" :class="tabControl==1?'ac':''">信息</li>
+        </ul>
+        <div :class="tabControl==0?'':'hide'" class="weatherInfo">
+          <div class="city">
+            <h5>珠海</h5>
+            <span>多云</span>
+            <h4>28<span>℃</span></h4>
           </div>
-          <div class="todayDetails clearfix">
-            <div class="f_l">
-              <label>详细资料</label>
+          <div class="weatherBg">
+            <div class="todayInfo">
+              <p class="clearfix">
+                <span class="f_l">周四 11/17</span>
+                <span class="f_r">34&nbsp;-&nbsp;27</span>
+              </p>
+              <ul class="clearfix">
+                <li>
+                  <span class="time">11am</span>
+                  <i></i>
+                  <span>30</span>
+                </li>
+                <li>
+                  <span class="time">11am</span>
+                  <i></i>
+                  <span>30</span>
+                </li>
+                <li>
+                  <span class="time">11am</span>
+                  <i></i>
+                  <span>30</span>
+                </li>
+                <li>
+                  <span class="time">11am</span>
+                  <i></i>
+                  <span>30</span>
+                </li>
+              </ul>
             </div>
-            <ul>
-              <li class="humidity">63%</li>
-              <li class="ultraviolet">中4</li>
-              <li class="windDirection"><span>东北</span>3公尺/秒</li>
-              <li class="PM">53良</li>
-            </ul>
-          </div>
-          <div class="last7">
-            <ul>
-              <li class="sunny">
-                <label>星期五</label>
-                <i class="weather"></i>
-                <span class="temperature">27°<em>23°</em></span>
-              </li>
-              <li class="sunny">
-                <label>星期六</label>
-                <i class="weather"></i>
-                <span class="temperature">27°<em>23°</em></span>
-              </li>
-              <li class="sunny">
-                <label>星期日</label>
-                <i class="weather"></i>
-                <span class="temperature">27°<em>23°</em></span>
-              </li>
-              <li class="sunny">
-                <label>星期一</label>
-                <i class="weather"></i>
-                <span class="temperature">27°<em>23°</em></span>
-              </li>
-              <li class="sunny">
-                <label>星期而</label>
-                <i class="weather"></i>
-                <span class="temperature">27°<em>23°</em></span>
-              </li>
-              <li class="sunny">
-                <label>星期三</label>
-                <i class="weather"></i>
-                <span class="temperature">27°<em>23°</em></span>
-              </li>
-              <li class="sunny">
-                <label>星期四</label>
-                <i class="weather"></i>
-                <span class="temperature">27°<em>23°</em></span>
-              </li>
-            </ul>
+            <div class="todayDetails clearfix">
+              <div class="f_l">
+                <label>详细资料</label>
+              </div>
+              <ul>
+                <li class="humidity">63%</li>
+                <li class="ultraviolet">中4</li>
+                <li class="windDirection"><span>东北</span>3公尺/秒</li>
+                <li class="PM">53良</li>
+              </ul>
+            </div>
+            <div class="last7">
+              <ul>
+                <li class="sunny">
+                  <label>星期五</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+                <li class="sunny">
+                  <label>星期六</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+                <li class="sunny">
+                  <label>星期日</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+                <li class="sunny">
+                  <label>星期一</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+                <li class="sunny">
+                  <label>星期而</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+                <li class="sunny">
+                  <label>星期三</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+                <li class="sunny">
+                  <label>星期四</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
+        <dl :class="tabControl==1?'':'hide'" class="Information">
+          <dt>报修<i class="edit" @click="showRepair()">我要报修</i></dt>
+          <dd  class="repair">
+            <h5>墙体维修</h5>
+            <p class="details">4月9日，8:00-10:00AM<span class="more" @click="showMore">more</span></p>
+            <p class="progress">
+              <span>客户报修</span>
+              <span>上门维修</span>
+              <span>用户评价</span>
+            </p>
+            <p class="repairMan">
+              <span>李晓明15879077879</span>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </p>
+          </dd>
+          <dt>活动</dt>
+          <dd class="activity">
+            <h5>羽毛球大赛召集中</h5>
+            <p class="details">8:00AM，4月9日社区羽毛球馆<span class="more" @click="showMore">more</span></p>
+          </dd>
+          <dt>通知</dt>
+          <dd class="notice">
+            <h5>停水通知</h5>
+            <p class="details">4月9日，上午8:00-上午10:00<span class="more" @click="showMore">more</span></p>
+          </dd>
+          <dd class="else">
+            <ul>
+              <li>账单缴费</li>
+              <li>访客通行</li>
+              <li>联系物业</li>
+            </ul>
+          </dd>
+        </dl>
       </div>
     </div>
+    <mu-dialog dialogClass="repair" :open="repairStatus" title="Dialog" @close="shadeClick">
+      <div>
+        <ul class="addPic">
+          <li><label><input type="file"></label></li>
+          <li><label><input type="file"></label></li>
+          <li><label><input type="file"></label></li>
+          <li><label><input type="file"></label></li>
+          <li><label><input type="file"></label></li>
+        </ul>
+        <div class="describe">
+          <h6>报修内容：</h6>
+          <!--<div class="enableInput" contenteditable="true">-->
+          <!--</div>-->
+          <textarea v-model="textVal" v-on:scroll.prevent="limitThree" class="enableInput" maxlength="50" rows="3"></textarea>
+        </div>
+      </div>
+      <mu-flat-button slot="actions" primary @click="shadeClick" label="提交"/>
+    </mu-dialog>
+    <div class="moreRecord" :class="moreStatus==true ? '' : 'hide'"></div>
+    <div id="shade" @click="shadeClick()" :class="shade==true ? 'ac' : 'hide'"></div>
   </div>
 </template>
 
@@ -152,7 +215,12 @@ export default {
       canPlay: true,
       currentTime: '0',
       duration: '0',
-      weatherData: [{data: '', wind: ''}]
+      weatherData: [{data: '', wind: ''}],
+      tabControl: 0,
+      repairStatus: false,
+      moreStatus: false,
+      shade: false,
+      textVal: ''
     }
   },
   methods: {
@@ -184,6 +252,23 @@ export default {
           that.canPlay = true
         }, 50)
       }
+    },
+    showRepair () {
+      this.repairStatus = true
+      this.shade = true
+    },
+    showMore () {
+      this.moreStatus = true
+      this.shade = true
+    },
+    shadeClick () {
+      this.MonitoringStatus = false
+      this.repairStatus = false
+      this.moreStatus = false
+      this.shade = false
+    },
+    limitThree () {
+      this.textVal = this.textVal.substr(0, this.textVal.length - 1)
     }
   },
   mounted () {
