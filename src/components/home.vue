@@ -78,8 +78,7 @@
         <img src="/static/img/home/bedroomMap.png" alt="">
       </div>
 
-      <ul class="device" :class="roomName+'Device'">
-        <!-- ngRepeat: (key,val) in nowDevice -->
+      <ul class="device" :class="roomName+'Device'" v-touch:doubletap="positionRoom.bind(this, '')">
         <li @click="changeDevice(key,val)" :class="val+' '+key[3]+' '+(key[2]=='0000'?'':'open')" v-for="(key,val) in nowRoomDevice">
           <label class="room-switch-title">{{key[0]}}</label>
         </li>

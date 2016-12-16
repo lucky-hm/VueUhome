@@ -54,7 +54,7 @@
       </ul>
       <div class="slideInfo" :class="weatherDetails?'active':''" v-touch:swiperight="weatherShow.bind(this, false)">
         <ul class="topTitle">
-          <li @click="tabControl = 0" :class="tabControl==0?'ac':''">天气</li>
+          <!--<li @click="tabControl = 0" :class="tabControl==0?'ac':''">天气</li>-->
           <li @click="tabControl = 1" :class="tabControl==1?'ac':''">信息</li>
         </ul>
         <div :class="tabControl==0?'':'hide'" class="weatherInfo">
@@ -186,11 +186,11 @@
     <mu-dialog dialogClass="repair" :open="repairStatus" title="Dialog" @close="shadeClick">
       <div>
         <ul class="addPic">
-          <li><label><input type="file"></label></li>
-          <li><label><input type="file"></label></li>
-          <li><label><input type="file"></label></li>
-          <li><label><input type="file"></label></li>
-          <li><label><input type="file"></label></li>
+          <li><label><input class="repairFile" type="file" accept="image/*"></label></li>
+          <li><label><input class="repairFile" type="file" accept="image/*"></label></li>
+          <li><label><input class="repairFile" type="file" accept="image/*"></label></li>
+          <li><label><input class="repairFile" type="file" accept="image/*"></label></li>
+          <li><label><input class="repairFile" type="file" accept="image/*"></label></li>
         </ul>
         <div class="describe">
           <h6>报修内容：</h6>

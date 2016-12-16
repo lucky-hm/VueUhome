@@ -12,6 +12,7 @@
     "lint": "eslint --ext .js,.vue src test/e2e/specs"
   },
   "dependencies": {
+    "autoprefixer": "^6.5.4",
     "muse-ui": "^2.0.0-alpha.11",
     "vue": "^2.0.1"
   },

@@ -5,7 +5,7 @@
 @import 'loginRegister.scss';
 /*房间公共类*/
 .mainContent {
-  background: url("../img/home/bg.png") no-repeat center center;
+  background: url("../img/home/bg.png") no-repeat center center / 100% 100%;
   -webkit-overflow-scrolling : touch; position: relative;
   flex-grow: 10;-webkit-flex-grow:10;
   .map {
@@ -357,7 +357,7 @@
     }
     .playControl{
       text-align: center;height:22px;
-      width:100%;line-height: 22px;
+      width:100%;
       span{
         vertical-align:middle;
         background:url(../img/home/play.png) no-repeat;
@@ -577,7 +577,7 @@
   -webkit-flex-grow:10;
   height: 100%;
   background: url("../img/home/shequMap.png") no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% 101%;
   left: 0;
   .blur{
     background-size: 756px 696px;
@@ -586,31 +586,128 @@
     height: 100%;
     width: 218px;
   }
-  li{
-    position: absolute;color:#fff;text-align: center;background: url(../img/home/camera.png) no-repeat;
-    background-size:29px 40px;width:29px;height:40px;line-height: 34px;
+  .man{
+    li{
+      background: url("../img/home/redCircle.png") no-repeat;
+      width:22px;height:22px;
+      position: absolute;
+      top:35%;left:56%;
+      -webkit-animation-duration: 1s;
+      .card {
+        background: url("../img/home/Box1.png") no-repeat;
+        width:165px;height:97px;
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        padding:0 6px 28px 6px;
+        color:#6d6d6d;
+        position: absolute;
+        left: 9px;
+        top: 10px;
+        -webkit-transform: translate(-50%,-100%);
+        p {
+          border-bottom: 1px solid #c7c7c7;
+          width:100%;
+          font-size:12px;
+          text-align: center;
+          padding-bottom:8px;
+        }
+        span {
+          display: block;
+          font-size: 9px;
+          padding-top: 5px;
+          letter-spacing: 2px;
+          margin-left:2px;
+        }
+      }
+    }
   }
-  li:nth-child(1){
-    top: 54%;
-    left: 25%;
-  }
-  li:nth-child(2){
-    top: 43%;
-    left: 52%;
-  }
-  li:nth-child(3){
-    top: 65%;
-    left: 51%;
-  }
-  li:nth-child(4){
-    top: 51%;
-    left: 74%;
+  .camera{
+    li {
+      position: absolute;
+      color: #fff;
+      text-align: center;
+      background: url(../img/home/camera.png) no-repeat;
+      width: 44px;
+      height: 50px;
+      text-indent: -14px;
+      line-height: 40px;
+      .box {
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        background: url("../img/home/Box.png") no-repeat -5px top;
+        width: 181px;
+        height: 183px;
+        color: #333;
+        padding: 0 14px;
+        text-align: left;
+        text-indent: 0;
+        padding-top: 15px;
+        position: absolute;
+        top: 100%;
+        -webkit-transform: translateX(-50%);
+        left:14px;
+        p {
+          font-size: 12px;
+          width: 100%;
+          height: 30px;
+          border-bottom: 1px solid #c7c7c7;
+          margin-bottom: 8px;
+          line-height: 34px;
+        }
+        img {
+          border: 1px solid #c7c7c7;
+          height: 50px;
+        }
+        span {
+          font-size: 8px;
+          line-height: 14px;
+        }
+        .btnL {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 10px;
+        }
+        button {
+          font-size: 10px;
+          width: 70px;
+          height: 20px;
+          border-radius: 5px;
+          border: 1px solid #c7c7c7;
+          color: #6d6d6d;
+          background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#d3d3d3));
+          letter-spacing: 2px;
+        }
+      }
+      &:nth-child(1) {
+        top: 7%;
+        left: 20%;
+      }
+      &:nth-child(2) {
+        top: 6%;
+        left: 74%;
+      }
+      &:nth-child(3) {
+        top: 23%;
+        left: 87%;
+      }
+      &:nth-child(4) {
+        top: 51%;
+        left: 56%;
+      }
+      &:nth-child(5) {
+        top: 70%;
+        left: 27%;
+      }
+    }
   }
 }
 .society-items{
   border-radius:0 5px 5px 0;
   background-color: #fff;
-  width:248px;padding:0 36px;
+  width:248px;padding:0 32px;
   display:-webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: center;
@@ -626,8 +723,12 @@
     margin:6px 0px 10px 0px;
     color:#a8acb9;
   }
+  .camera {
+    display: -webkit-flex;
+    -webkit-justify-content: space-around;
+  }
   li{
-   background-color: #fff;
+    background-color: #fff;color:#a8acb9;
     img{
       width:52px;
       height:52px;
@@ -654,7 +755,7 @@
     resize: none;
     border:none;
     height:94px;
-    padding:5px;
+    padding:5px 10px;
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     font-size:12px;
@@ -671,7 +772,7 @@
     border:0;color:#fff;
     background-color: #00d5c3;
     width:80px;height:26px;
-    font-size:10px;
+    font-size:12px;
     border-radius: 20px;
     letter-spacing: 4px;
     margin:0 auto;
@@ -917,9 +1018,6 @@
                       max-width: 400px;
                       word-break: break-all;text-align: left;
                 }
-                #sendInfo{
-                  -webkit-user-modify: read-write-plaintext-only;
-                }
               }
               .f_r {
                 text-align: right;
@@ -945,6 +1043,9 @@
                     padding: 10px 15px;
                     max-height: 100px;
                     overflow: auto;
+              }
+              #sendInfo{
+                -webkit-user-modify: read-write-plaintext-only;
               }
               .camera{
                 background: url(../img/home/camera-icon.png) no-repeat;
@@ -1426,7 +1527,6 @@
 /* 天气侧边栏 */
 .slideInfo {
   font-size:14px;
-  background-color: rgba(23, 32, 39, 0.5);
   background-size: 100% 100%;
   position: fixed;display:-webkit-flex;
   -webkit-flex-direction: column;
@@ -1438,13 +1538,25 @@
   width:218px;height:100%;padding-bottom:72px;
   box-sizing:border-box;
   -webkit-box-sizing:border-box;
+  &:after {
+    position: absolute;
+    content:' ';
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+    background-color: rgba(0,0,0,.2);
+    pointer-events: none;
+  }
   &.active{
     transform: translateX(0%);
     -webkit-transform: translateX(0%);
   }
   .topTitle{
-    display:-webkit-flex;height:25px;
-    line-height: 25px;
+    display:-webkit-flex;height:20px;
+    position: relative;
+    z-index:2;
+    line-height: 20px;
     li{
       -webkit-flex-grow:2;height:100%;
       margin:0 1px;
@@ -1462,6 +1574,7 @@
     padding:10px 4px 0 4px;
     dt{
       margin:22px 15px 0 15px;position:relative;
+      z-index:2;
       background-color:#3da59b;
       color:#fff;
       text-align:center;
@@ -1486,19 +1599,21 @@
         border-bottom:0px;
         margin-top: 60px;
         color:#fff;font-size: 10px;
-        ul{
-          display:-webkit-flex;
-          li{
-            -webkit-flex-grow:2;
+        ul {
+          display: -webkit-flex;
+          position: relative;
+          z-index:2;
+          li {
+            -webkit-flex-grow: 2;
             text-align: center;
-            padding-top:25px;
-            &:nth-child(1){
+            padding-top: 25px;
+            &:nth-child(1) {
               background: url(../img/home/wy.png) no-repeat 20px 0px;
             }
-            &:nth-child(2){
+            &:nth-child(2) {
               background: url(../img/home/wy.png) no-repeat -40px 0px;
             }
-            &:nth-child(3){
+            &:nth-child(3) {
               background: url(../img/home/wy.png) no-repeat -100px 0px;
             }
           }
@@ -1507,6 +1622,8 @@
       h5{
         color: #fff;
         font-size: 18px;
+        position: relative;
+        z-index:2;
         margin-top: 15px;
       }
       .details{
@@ -1558,7 +1675,7 @@
   }
   .weatherInfo{
     padding-top:87px;
-    *{margin:0;line-height: 1;color: rgba(255,255,255,.6);}
+    *{margin:0;line-height: 1;color:#fff;}
     .city{
       position: absolute;
       z-index: -1;
@@ -1585,8 +1702,8 @@
       }
     }
     .weatherBg{
-      background: url(../img/weatherSilde.png) no-repeat;
-      background-size:100% 100%;
+      //background: url(../img/weatherSilde.png) no-repeat;
+      //background-size:100% 100%;
       -webkit-flex-grow: 9;padding:0 5px;
     }
     .todayInfo{
@@ -1743,6 +1860,8 @@
       content:"添加照片";
       position: absolute;
       bottom:2px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
       font-size: 15px;
     }
     li{
@@ -1757,7 +1876,7 @@
         &:after{
           content:'+';
           color:#fff;
-          line-height: 36px;
+          line-height: 30px;
           font-size: 32px;
         }
       }

@@ -10,7 +10,10 @@ Vue.use(VueRouter)
 Vue.use(VueResource)
 Vue.use(VueTouch)
 Vue.use(MuseUI)
-
+VueTouch.registerCustomEvent('doubletap', {
+  type: 'tap',
+  taps: 2
+})
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,

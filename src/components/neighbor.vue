@@ -114,6 +114,8 @@
         if (inpt.innerHTML === '') {
           return false
         }
+        window.a = inpt.innerHTML
+        inpt.innerHTML = inpt.innerHTML.replace(/\n/g, '<br>')
         let obj = {'who': 1, 'info': inpt.innerHTML, 'headImg': '/static/img/home/test1.png'}
         this.friendsList[this.i].records.push(obj)
         inpt.innerHTML = ''
