@@ -55,7 +55,7 @@
       <div class="slideInfo" :class="weatherDetails?'active':''" v-touch:swiperight="weatherShow.bind(this, false)">
         <ul class="topTitle">
           <!--<li @click="tabControl = 0" :class="tabControl==0?'ac':''">天气</li>-->
-          <li @click="tabControl = 1" :class="tabControl==1?'ac':''">信息</li>
+          <li @click="tabControl = 1" :class="tabControl==0?'ac':''">信息</li>
         </ul>
         <div :class="tabControl==0?'':'hide'" class="weatherInfo">
           <div class="city">
@@ -165,8 +165,8 @@
           </dd>
           <dt>活动</dt>
           <dd class="activity">
-            <h5>羽毛球大赛召集中</h5>
-            <p class="details">8:00AM，4月9日社区羽毛球馆<span class="more" @click="showMore">more</span></p>
+            <h5 v-touch:tap="showActivity">羽毛球大赛召集中</h5>
+            <p v-touch:tap="showActivity" class="details">8:00AM，4月9日社区羽毛球馆<span class="more" v-touch:tap="showMore">more</span></p>
           </dd>
           <dt>通知</dt>
           <dd class="notice">
@@ -201,8 +201,47 @@
       </div>
       <mu-flat-button slot="actions" primary @click="shadeClick" label="提交"/>
     </mu-dialog>
-    <div class="moreRecord" :class="moreStatus==true ? '' : 'hide'"></div>
-    <div id="shade" @click="shadeClick()" :class="shade==true ? 'ac' : 'hide'"></div>
+    <!--<div class="moreRecord" :class="moreStatus==true ? '' : 'hide'"></div>-->
+    <mu-dialog dialogClass="activity" :open="activityStatus" title="Dialog" @close="shadeClick">
+      <div class="banner">
+        <div class="word">
+          <div class="oper">
+            <i class="search"></i>
+            <i class="more"></i>
+          </div>
+          <span class="time">12月16日／2016</span>
+          <h1>7天自行车骑行</h1>
+          <h1>倡导地毯生活、绿色出行</h1>
+          <p class="mt5">社区服务站组织自行车骑行活动，已安排50辆自行车为本次活动使用，活动试运行7天免费租用，倡导低碳生活</p>
+          <p>（仅限本社区业主）</p>
+          <button>报名申请</button>
+        </div>
+      </div>
+      <div>
+        <dl class="comment">
+          <dt><i class="edit"></i>评论<span class="count">50条</span></dt>
+          <dd>
+            <img class="/static/img/home/test.png">
+            <p><span class="name">陈大哥</span>&nbsp;本次骑行赛车活动规模大、内容丰富、参赛选手众多。我们策划这次活动，一方面，试图通过“骑行”这种形式，倡导绿色出行新风尚，身体力行实践低碳生活，落实国家低碳减排政策。另一方面，这也是一次传播自行车文化，普及大众骑行活动的播种之旅。</p>
+            <p class="info"><span class="time">2分钟前</span><span class="look">38</span><span class="like">20</span></p>
+          </dd>
+        </dl>
+        <dl class="player">
+          <dt><i>+</i>参与者<span class="count">38位</span></dt>
+          <dd>
+            <ul>
+              <li><img src="/static/img/home/test1.png"></li>
+              <li><img src="/static/img/home/test1.png"></li>
+              <li><img src="/static/img/home/test1.png"></li>
+              <li><img src="/static/img/home/test1.png"></li>
+              <li><img src="/static/img/home/test1.png"></li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+      <mu-flat-button slot="actions" primary @click="shadeClick" label="提交"/>
+    </mu-dialog>
+    <div id="shade" v-touch:tap="shadeClick" :class="shade==true ? 'ac' : 'hide'"></div>
   </div>
 </template>
 
@@ -216,8 +255,9 @@ export default {
       currentTime: '0',
       duration: '0',
       weatherData: [{data: '', wind: ''}],
-      tabControl: 0,
+      tabControl: 1,
       repairStatus: false,
+      activityStatus: false,
       moreStatus: false,
       shade: false,
       textVal: ''
@@ -257,6 +297,10 @@ export default {
       this.repairStatus = true
       this.shade = true
     },
+    showActivity () {
+      this.activityStatus = true
+      this.shade = true
+    },
     showMore () {
       this.moreStatus = true
       this.shade = true
@@ -265,6 +309,7 @@ export default {
       this.MonitoringStatus = false
       this.repairStatus = false
       this.moreStatus = false
+      this.activityStatus = false
       this.shade = false
     },
     limitThree () {

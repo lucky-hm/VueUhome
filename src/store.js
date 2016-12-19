@@ -23,8 +23,8 @@ const mutations = {
   },
   routerBack (state) {
     state.routerAnimate = {
-      enter: 'animated slideInLeft',
-      leave: 'animated slideOutRight'
+      enter: 'slideInLeft',
+      leave: 'slideOutRight'
     }
   },
   changeHeaderStatus (state, status) {

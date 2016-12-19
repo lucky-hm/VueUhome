@@ -548,20 +548,6 @@
       left: 50px;
     }
   }
-  // .repair{
-  //   -webkit-animation:InfoFadeIn .7s ease forwards;z-index: 100;
-  //   background:url(../img/home/repair.png) no-repeat;
-  //   width:411px;height:394px;background-size:100% 100%;
-  //   position: absolute;left:50%;top:20%;
-  //   margin-left: -205.5px;margin-top: -197px;
-  // }
-  .moreRecord{
-    -webkit-animation:InfoFadeIn .7s ease forwards;z-index: 100;
-    background:url(../img/home/moreRecord.png) no-repeat;
-    width:578px;height:331px;background-size:100% 100%;
-    position: absolute;left:50%;top:50%;
-    margin-left: -205.5px;margin-top: -197px;
-  }
 }
 #shade{
   position: fixed;top:0;left:0;width:100%;height:100%;visibility:hidden;z-index: 99;
@@ -1582,7 +1568,7 @@
       letter-spacing: 2px;
       font-size:10px;
       .edit{
-        background: url(../img/home/Shape-3.png) no-repeat left center;
+        background: url('../img/home/Shape-3.png') no-repeat left center;
         display: inline-block;
         position: absolute;
         font-style: normal;
@@ -1607,13 +1593,13 @@
             text-align: center;
             padding-top: 25px;
             &:nth-child(1) {
-              background: url(../img/home/wy.png) no-repeat 20px 0px;
+              background: url('../img/home/wy.png') no-repeat 20px 0px;
             }
             &:nth-child(2) {
-              background: url(../img/home/wy.png) no-repeat -40px 0px;
+              background: url('../img/home/wy.png') no-repeat -40px 0px;
             }
             &:nth-child(3) {
-              background: url(../img/home/wy.png) no-repeat -100px 0px;
+              background: url('../img/home/wy.png') no-repeat -100px 0px;
             }
           }
         }
@@ -1700,8 +1686,6 @@
       }
     }
     .weatherBg{
-      //background: url(../img/weatherSilde.png) no-repeat;
-      //background-size:100% 100%;
       -webkit-flex-grow: 9;padding:0 5px;
     }
     .todayInfo{
@@ -1731,9 +1715,8 @@
     .todayDetails{
       padding:6px 7px 20px 7px;border-bottom:1px solid rgba(255,255,255,.2);
       .f_l{
-        width:50%;height:100%;padding-top:4px;
-        background: url(../img/Free-Weather.png) no-repeat;
-        background-position: -107px -18px;
+        width:38%;height:100%;padding-top:4px;
+        background: url('../img/Free-Weather.png') no-repeat -107px -18px;
         background-size: 767px 571px;position: absolute;
         height:120px;
         label{font-size: 12px;}
@@ -1753,7 +1736,7 @@
         &:after{
           position: absolute;font-size: 10px;
           left: 0;bottom:0;padding-top:12px;
-          width:35px;height:100%;
+          min-width:35px;height:100%;
           background: url(../img/Free-Weather.png) no-repeat;
           background-size:256px 189.6px;
         }
@@ -1828,15 +1811,16 @@
   width:410px;
   border-radius:18px;
   overflow:hidden;
-  .mu-dialog-header{
+  .mu-dialog-header,.mu-dialog-title{
     display: none;
   }
   .mu-dialog-body {
     padding:0;background-color:#e7e7e4;
   }
-  .mu-dialog-footer{
+  .mu-dialog-actions{
     background-color:#e7e7e4;
     -webkit-justify-content: center;
+    display: -webkit-flex;
     .mu-flat-button-label{
       color:#333;
     }
@@ -1899,6 +1883,54 @@
       }
       div{
         border-bottom:1px solid #ccc;
+      }
+    }
+  }
+}
+.mu-dialog.activity{
+  width:810px;
+  height:460px;
+  border-radius:5px;
+  .mu-dialog-title,.mu-dialog-actions{
+    display: none;
+  }
+  .mu-dialog-body{
+    padding:0;
+    .banner{
+      width:100%;height:290px;color:#fff;
+      background: url("../img/home/Photo.png") no-repeat 0 0 / 100% 100%;
+      .word {
+        width: 360px;
+        padding: 36px 0 0 56px;
+        box-sizing: content-box;
+        word-break: break-all;
+      }
+      .time{
+        font-size:8px;
+        letter-spacing: 1px;
+        margin-bottom:10px;
+      }
+      .mt5{
+        margin-top:5px;
+      }
+      h1{
+        font-size:32px;
+        line-height:42px;
+      }
+      p{
+        font-size:11px;color:#fff;
+        line-height:18px;
+      }
+      button {
+        width: 180px;
+        height: 30px;
+        color: #fff;
+        border: 0;
+        font-size:10px;
+        background-color: rgb(0,213,195);
+        margin-top:16px;
+        border-radius:20px;
+        letter-spacing:2px;
       }
     }
   }
