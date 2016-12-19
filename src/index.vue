@@ -1,6 +1,6 @@
 <template lang="html">
     <transition :enter-active-class="routerAnimate.enter" :leave-active-class="routerAnimate.leave">
-      <router-view></router-view>
+      <router-view class="animated"></router-view>
     </transition>
 </template>
 

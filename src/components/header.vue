@@ -69,7 +69,7 @@
                 <span class="f_l">周四 11/17</span>
                 <span class="f_r">34&nbsp;-&nbsp;27</span>
               </p>
-              <ul class="clearfix">
+              <ul>
                 <li>
                   <span class="time">11am</span>
                   <i></i>

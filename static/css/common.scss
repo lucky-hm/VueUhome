@@ -21,7 +21,7 @@ html {overflow-y: scroll;}
 .dib{display: inline-block;}
 .mt10{margin-top: 10px !important;}
 body {
-  background: url(../img/home/bg.png) no-repeat;
+  background: url("../img/home/bg.png") no-repeat center center / 100% 100%;
 }
 audio{
 	display: none;

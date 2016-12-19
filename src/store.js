@@ -7,8 +7,8 @@ const state = {
     account: 'test'
   },
   routerAnimate: {
-    enter: 'animated slideInRight',
-    leave: 'animated slideOutLeft'
+    enter: 'slideInRight',
+    leave: 'slideOutLeft'
   },
   headerShow: true,
   footerNavShow: true
@@ -17,8 +17,8 @@ const state = {
 const mutations = {
   routerGo (state) {
     state.routerAnimate = {
-      enter: 'animated slideInRight',
-      leave: 'animated slideOutLeft'
+      enter: 'slideInRight',
+      leave: 'slideOutLeft'
     }
   },
   routerBack (state) {
