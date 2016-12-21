@@ -194,7 +194,6 @@ export default {
       ).then((re) => {
         if (re.data.code === 200) {
           that.$set(that.model302[that.roomName][index], 2, value)
-          // that.model302[that.roomName][index].splice(2, 1, value)
         } else {
           console.log(re.data)
         }

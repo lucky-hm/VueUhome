@@ -203,41 +203,92 @@
     </mu-dialog>
     <!--<div class="moreRecord" :class="moreStatus==true ? '' : 'hide'"></div>-->
     <mu-dialog dialogClass="activity" :open="activityStatus" title="Dialog" @close="shadeClick">
-      <div class="banner">
-        <div class="word">
-          <div class="oper">
-            <i class="search"></i>
-            <i class="more"></i>
-          </div>
-          <span class="time">12月16日／2016</span>
-          <h1>7天自行车骑行</h1>
-          <h1>倡导地毯生活、绿色出行</h1>
-          <p class="mt5">社区服务站组织自行车骑行活动，已安排50辆自行车为本次活动使用，活动试运行7天免费租用，倡导低碳生活</p>
-          <p>（仅限本社区业主）</p>
-          <button>报名申请</button>
-        </div>
+      <div class="list">
+        <ul>
+          <li>
+            <div class="img">
+              <img src="/static/img/home/test3.png">
+            </div>
+            <div class="describe">
+              <p><span class="time">12月15日/2016</span><span class="status">活动进行中</span></p>
+              <h2>健身会所广场内</h2>
+              <p>12月15日-12月20日本社区健身会特别举行滑板运动，我会安排5位教练现场指导，欢迎各位业主大朋友小朋友踊跃报名参加哦^_^！</p>
+              <div class="oper">
+                <button>下次活动提醒</button>
+                <span class="discuss">86&nbsp;评论</span>
+              </div>
+              <div>
+                <button class="lookDetails">查&nbsp;看</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="img">
+              <img src="/static/img/home/test4.png">
+            </div>
+            <div class="describe">
+              <p><span class="time">12月15日/2016</span><span class="status">活动进行中</span></p>
+              <h2>健身会所广场内</h2>
+              <p>12月15日-12月20日本社区健身会特别举行滑板运动，我会安排5位教练现场指导，欢迎各位业主大朋友小朋友踊跃报名参加哦^_^！</p>
+              <div class="oper">
+                <button>下次活动提醒</button>
+                <span class="discuss">86&nbsp;评论</span>
+              </div>
+              <div>
+                <button class="lookDetails">查&nbsp;看</button>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div>
-        <dl class="comment">
-          <dt><i class="edit"></i>评论<span class="count">50条</span></dt>
-          <dd>
-            <img class="/static/img/home/test.png">
-            <p><span class="name">陈大哥</span>&nbsp;本次骑行赛车活动规模大、内容丰富、参赛选手众多。我们策划这次活动，一方面，试图通过“骑行”这种形式，倡导绿色出行新风尚，身体力行实践低碳生活，落实国家低碳减排政策。另一方面，这也是一次传播自行车文化，普及大众骑行活动的播种之旅。</p>
-            <p class="info"><span class="time">2分钟前</span><span class="look">38</span><span class="like">20</span></p>
-          </dd>
-        </dl>
-        <dl class="player">
-          <dt><i>+</i>参与者<span class="count">38位</span></dt>
-          <dd>
-            <ul>
-              <li><img src="/static/img/home/test1.png"></li>
-              <li><img src="/static/img/home/test1.png"></li>
-              <li><img src="/static/img/home/test1.png"></li>
-              <li><img src="/static/img/home/test1.png"></li>
-              <li><img src="/static/img/home/test1.png"></li>
-            </ul>
-          </dd>
-        </dl>
+      <div class="details">
+        <div class="banner">
+          <div class="word">
+            <span class="time">12月16日／2016</span>
+            <h1>7天自行车骑行</h1>
+            <h1>倡导地毯生活、绿色出行</h1>
+            <p class="mt5">社区服务站组织自行车骑行活动，已安排50辆自行车为本次活动使用，活动试运行7天免费租用，倡导低碳生活</p>
+            <p>(&nbsp;仅限本社区业主&nbsp;)</p>
+            <button>报名申请</button>
+          </div>
+          <div class="oper">
+            <input class="search" type='text'>
+            <button class="more"></button>
+          </div>
+        </div>
+        <div class="cont">
+          <dl class="comment">
+            <dt><i class="edit"></i>评论<span class="count gray">50条</span></dt>
+            <dd>
+              <img src="/static/img/home/test.png">
+              <p><span class="name">陈大哥</span>&nbsp;本次骑行赛车活动规模大、内容丰富、参赛选手众多。我们策划这次活动，一方面，试图通过“骑行”这种形式，倡导绿色出行新风尚，身体力行实践低碳生活，落实国家低碳减排政策。另一方面，这也是一次传播自行车文化，普及大众骑行活动的播种之旅。</p>
+              <p class="cInfo"><span class="time gray">2分钟前</span><span class="look">38</span><span class="like">20</span></p>
+            </dd>
+            <dd>
+              <img src="/static/img/home/test.png">
+              <p><span class="name">陈大哥</span>&nbsp;本次骑行赛车活动规模大、内容丰富、参赛选手众多。我们策划这次活动，一方面，试图通过“骑行”这种形式，倡导绿色出行新风尚，身体力行实践低碳生活，落实国家低碳减排政策。另一方面，这也是一次传播自行车文化，普及大众骑行活动的播种之旅。</p>
+              <p class="cInfo"><span class="time gray">2分钟前</span><span class="look">38</span><span class="like">20</span></p>
+            </dd>
+          </dl>
+          <dl class="player">
+            <dt><i>+</i>参与者<span class="count gray">38位</span></dt>
+            <dd>
+              <ul class="clearfix">
+                <li><img src="/static/img/home/test1.png"></li>
+                <li><img src="/static/img/home/test1.png"></li>
+                <li><img src="/static/img/home/test1.png"></li>
+                <li><img src="/static/img/home/test1.png"></li>
+                <li><img src="/static/img/home/test1.png"></li>
+                <li><img src="/static/img/home/test1.png"></li>
+                <li><img src="/static/img/home/test1.png"></li>
+                <li><img src="/static/img/home/test1.png"></li>
+                <li><img src="/static/img/home/test1.png"></li>
+                <li><img src="/static/img/home/test1.png"></li>
+                <li><img src="/static/img/home/test1.png"></li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
       </div>
       <mu-flat-button slot="actions" primary @click="shadeClick" label="提交"/>
     </mu-dialog>
@@ -249,17 +300,17 @@
 export default {
   data () {
     return {
-      nowDate: '2016年12月01日',
-      weatherDetails: false,
-      canPlay: true,
-      currentTime: '0',
-      duration: '0',
-      weatherData: [{data: '', wind: ''}],
-      tabControl: 1,
-      repairStatus: false,
-      activityStatus: false,
+      nowDate: '2016年12月01日', // 当前时间
+      weatherDetails: false, // 侧边栏显示
+      canPlay: true, // 控制播放器进度更新频率
+      currentTime: '0', // 当前播放进度
+      duration: '0', // 播放总长
+      weatherData: [{data: '', wind: ''}], // 天气数据
+      tabControl: 1, // 侧边栏 天气（0）、信息（1）切换
+      repairStatus: false, // 报修弹框显示
+      activityStatus: false, // 活动弹框显示
       moreStatus: false,
-      shade: false,
+      shade: false, // 弹框遮罩显示
       textVal: ''
     }
   },
