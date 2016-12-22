@@ -5,19 +5,19 @@
       <span>2016年11月18日</span>
       <!-- <mu-date-picker v-model="nowDate" format="YYYY年MM月DD日" container="inline" underlineShow="false" /> -->
       <div class="content">
-        <img src="/static/img/home/calendar.png" alt="">
+        <img src="static/img/home/calendar.png" alt="">
         <div class="activity">
-          <img src="/static/img/home/calendar1.png" alt="">
+          <img src="static/img/home/calendar1.png" alt="">
           <div class="slide">
-            <img class="l" src="/static/img/home/calendarL.png" alt="">
-            <img class="r" src="/static/img/home/calendarR.png">
+            <img class="l" src="static/img/home/calendarL.png" alt="">
+            <img class="r" src="static/img/home/calendarR.png">
           </div>
         </div>
       </div>
     </div>
     <div class="top-icon">
-      <div on-tap="iconChange(1)" class="message"><i>2</i><div class="content"><img src="/static/img/home/infoCard.png" alt=""><div class="more"><div class="ac"></div><img src="/static/img/home/infoDetails.png" alt=""></div></div></div>
-      <div on-tap="iconChange(2)" class="video"><div class="content"><img src="/static/img/home/video.png" alt=""><div class="addressBook"><img src="/static/img/home/video1.png" alt=""></div></div></div>
+      <div on-tap="iconChange(1)" class="message"><i>2</i><div class="content"><img src="static/img/home/infoCard.png" alt=""><div class="more"><div class="ac"></div><img src="static/img/home/infoDetails.png" alt=""></div></div></div>
+      <div on-tap="iconChange(2)" class="video"><div class="content"><img src="static/img/home/video.png" alt=""><div class="addressBook"><img src="static/img/home/video1.png" alt=""></div></div></div>
       <div on-tap="iconChange(3)"><div class="content"></div></div>
       <div on-tap="iconChange(4)"><div class="content"></div></div>
       <div on-tap="iconChange(5)"><div class="content"></div></div>
@@ -25,7 +25,7 @@
     </div>
     <div class="top-music">
       <audio v-on:loadedmetadata="loadedmetadata()" v-on:timeupdate="timeupdate(true)" id="media" >
-        <source src="/static/music/海楠 - 爱啦啦.mp3" controls="" />
+        <source src="static/music/海楠 - 爱啦啦.mp3" controls="" />
       </audio>
       <div class="t">
         <div class="mControl">
@@ -183,31 +183,17 @@
         </dl>
       </div>
     </div>
+    <!-- 报修 -->
     <mu-dialog dialogClass="repair" :open="repairStatus" title="Dialog" @close="shadeClick">
-      <div>
-        <ul class="addPic">
-          <li><label><input class="repairFile" type="file" accept="image/*"></label></li>
-          <li><label><input class="repairFile" type="file" accept="image/*"></label></li>
-          <li><label><input class="repairFile" type="file" accept="image/*"></label></li>
-          <li><label><input class="repairFile" type="file" accept="image/*"></label></li>
-          <li><label><input class="repairFile" type="file" accept="image/*"></label></li>
-        </ul>
-        <div class="describe">
-          <h6>报修内容：</h6>
-          <!--<div class="enableInput" contenteditable="true">-->
-          <!--</div>-->
-          <textarea v-model="textVal" v-on:scroll.prevent="limitThree" class="enableInput" maxlength="50" rows="3"></textarea>
-        </div>
-      </div>
-      <mu-flat-button slot="actions" primary @click="shadeClick" label="提交"/>
+      <repair></repair>
     </mu-dialog>
-    <!--<div class="moreRecord" :class="moreStatus==true ? '' : 'hide'"></div>-->
+    <!-- 活动 -->
     <mu-dialog dialogClass="activity" :open="activityStatus" title="Dialog" @close="shadeClick">
       <div class="list">
         <ul>
           <li>
             <div class="img">
-              <img src="/static/img/home/test3.png">
+              <img src="static/img/home/test3.png">
             </div>
             <div class="describe">
               <p><span class="time">12月15日/2016</span><span class="status">活动进行中</span></p>
@@ -224,7 +210,7 @@
           </li>
           <li>
             <div class="img">
-              <img src="/static/img/home/test4.png">
+              <img src="static/img/home/test4.png">
             </div>
             <div class="describe">
               <p><span class="time">12月15日/2016</span><span class="status">活动进行中</span></p>
@@ -260,12 +246,12 @@
           <dl class="comment">
             <dt><i class="edit"></i>评论<span class="count gray">50条</span></dt>
             <dd>
-              <img src="/static/img/home/test.png">
+              <img src="static/img/home/test.png">
               <p><span class="name">陈大哥</span>&nbsp;本次骑行赛车活动规模大、内容丰富、参赛选手众多。我们策划这次活动，一方面，试图通过“骑行”这种形式，倡导绿色出行新风尚，身体力行实践低碳生活，落实国家低碳减排政策。另一方面，这也是一次传播自行车文化，普及大众骑行活动的播种之旅。</p>
               <p class="cInfo"><span class="time gray">2分钟前</span><span class="look">38</span><span class="like">20</span></p>
             </dd>
             <dd>
-              <img src="/static/img/home/test.png">
+              <img src="static/img/home/test.png">
               <p><span class="name">陈大哥</span>&nbsp;本次骑行赛车活动规模大、内容丰富、参赛选手众多。我们策划这次活动，一方面，试图通过“骑行”这种形式，倡导绿色出行新风尚，身体力行实践低碳生活，落实国家低碳减排政策。另一方面，这也是一次传播自行车文化，普及大众骑行活动的播种之旅。</p>
               <p class="cInfo"><span class="time gray">2分钟前</span><span class="look">38</span><span class="like">20</span></p>
             </dd>
@@ -274,17 +260,17 @@
             <dt><i>+</i>参与者<span class="count gray">38位</span></dt>
             <dd>
               <ul class="clearfix">
-                <li><img src="/static/img/home/test1.png"></li>
-                <li><img src="/static/img/home/test1.png"></li>
-                <li><img src="/static/img/home/test1.png"></li>
-                <li><img src="/static/img/home/test1.png"></li>
-                <li><img src="/static/img/home/test1.png"></li>
-                <li><img src="/static/img/home/test1.png"></li>
-                <li><img src="/static/img/home/test1.png"></li>
-                <li><img src="/static/img/home/test1.png"></li>
-                <li><img src="/static/img/home/test1.png"></li>
-                <li><img src="/static/img/home/test1.png"></li>
-                <li><img src="/static/img/home/test1.png"></li>
+                <li><img src="static/img/home/test1.png"></li>
+                <li><img src="static/img/home/test1.png"></li>
+                <li><img src="static/img/home/test1.png"></li>
+                <li><img src="static/img/home/test1.png"></li>
+                <li><img src="static/img/home/test1.png"></li>
+                <li><img src="static/img/home/test1.png"></li>
+                <li><img src="static/img/home/test1.png"></li>
+                <li><img src="static/img/home/test1.png"></li>
+                <li><img src="static/img/home/test1.png"></li>
+                <li><img src="static/img/home/test1.png"></li>
+                <li><img src="static/img/home/test1.png"></li>
               </ul>
             </dd>
           </dl>
@@ -297,7 +283,11 @@
 </template>
 
 <script>
+import repair from './repair'
 export default {
+  components: {
+    repair: repair
+  },
   data () {
     return {
       nowDate: '2016年12月01日', // 当前时间

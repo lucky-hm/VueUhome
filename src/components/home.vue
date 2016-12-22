@@ -75,7 +75,7 @@
       </ul>
 
       <div class="map" v-touch:tap="positionRoom.bind(this, '')">
-        <img src="/static/img/home/bedroomMap.png" alt="">
+        <img src="static/img/home/bedroomMap.png" alt="">
       </div>
 
       <ul class="device" :class="roomName+'Device'" v-touch:doubletap="positionRoom.bind(this, '')">

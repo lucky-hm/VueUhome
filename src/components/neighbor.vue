@@ -5,7 +5,7 @@
       <div class="chat-head">
         <h2 @click="getFriends">邻里</h2>
         <div class="f_l">
-          <img src="/static/img/home/test1.png" alt="">
+          <img src="static/img/home/test1.png" alt="">
           <div class="dib">
             <p class="name">John</p>
             <p class="introduced">建筑设计师、A单元3306</p>
@@ -26,7 +26,7 @@
             <button></button><input v-on:input="searchFriends" v-model="searchVal" type="text" placeholder="搜索">
           </div>
           <div @click="i = index" :class="{'active':index === i,'hide':val.enable === false}" class="chat-list-item" v-for="val,index in friendsList" >
-            <img :src="'/static/img/'+val.img" alt="">
+            <img :src="'static/img/'+val.img" alt="">
              <div class="dib">
                <p class="name">{{val.name}}</p>
                <p class="introduced">{{val.position}}，{{val.area}}</p>
@@ -36,7 +36,7 @@
         </div>
         <div class="chat_content">
           <div class="chat_info1">
-            <img class="headImg" :src="'/static/img/'+friendsList[i].img" alt="">
+            <img class="headImg" :src="'static/img/'+friendsList[i].img" alt="">
             <div class="dib">
               <p class="name">{{friendsList[i].name}}</p>
               <p class="position">{{friendsList[i].position}}</p>
@@ -55,7 +55,7 @@
           <div class="chat_info2">
             <div class="chatContet scroll-content ionic-scroll">
               <div v-for="item in friendsList[i].records" :class="item.who == 0 ? 'f_l' : 'f_r'">
-                <img :src="'/static/img/'+(item.who == 0 ? friendsList[i].img : 'home/test1.png')" alt="">
+                <img :src="'static/img/'+(item.who == 0 ? friendsList[i].img : 'home/test1.png')" alt="">
                 <div class="dib" v-html="item.info"></div>
               </div>
             </div>
@@ -116,14 +116,14 @@
         }
         window.a = inpt.innerHTML
         inpt.innerHTML = inpt.innerHTML.replace(/\n/g, '<br>')
-        let obj = {'who': 1, 'info': inpt.innerHTML, 'headImg': '/static/img/home/test1.png'}
+        let obj = {'who': 1, 'info': inpt.innerHTML, 'headImg': 'static/img/home/test1.png'}
         this.friendsList[this.i].records.push(obj)
         inpt.innerHTML = ''
       },
       getFriends () {
         let that = this
         this.$http.get(
-          '/static/test/getFriends.json',
+          'static/test/getFriends.json',
           {emulateJSON: true, emulateHTTP: true}
         ).then((re) => {
           that.friendsList = re.data.data

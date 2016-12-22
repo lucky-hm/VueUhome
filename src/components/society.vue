@@ -6,7 +6,7 @@
             <li>
               <div class="box">
                 <p>申请查看监控</p>
-                <img src="/static/img/home/-135.png">
+                <img src="static/img/home/-135.png">
                 <span>主入口1号监控机位</span>
                 <div class="btnL">
                   <button v-touch:tap="showMonitoring.bind(this,1)">申请查看</button>
@@ -35,7 +35,7 @@
             识别定位中
           </div>
           <ul>
-            <li><img src="/static/img/home/test.png"><p>邓丽君</p></li>
+            <li><img src="static/img/home/test.png"><p>邓丽君</p></li>
           </ul>
           <div class="shake" v-touch:tap="tada">定位卡振动按钮</div>
           <textarea placeholder="编辑信息"></textarea>

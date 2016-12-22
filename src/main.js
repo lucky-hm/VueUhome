@@ -15,7 +15,7 @@ VueTouch.registerCustomEvent('doubletap', {
   taps: 2
 })
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: __dirname,
   routes
 })

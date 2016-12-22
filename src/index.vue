@@ -5,7 +5,9 @@
       </keep-alive>
     </transition>
 </template>
-
+<style lang="scss">
+  @import "assets/css/style";
+</style>
 <script>
 import { mapGetters } from 'vuex'
 export default {
