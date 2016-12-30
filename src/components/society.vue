@@ -29,7 +29,7 @@
           </ul>
           <!--<div class="blur"></div>-->
         </div>
-        <div class="society-items">
+        <div class="society-items" :style="slideShow()?'filter:blur(5px)':''">
           <h2>园区定位</h2>
           <div class="gprs">
             识别定位中
@@ -52,7 +52,7 @@
   </div>
 </template>
 <script>
-  import { mapActions } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
   export default{
     created () {
       this.changeFooterStatus(false)
@@ -66,7 +66,8 @@
         repairStatus: false,
         moreStatus: false,
         shade: false,
-        tadaing: false
+        tadaing: false,
+        ...mapGetters(['slideShow'])
       }
     },
     methods: {

@@ -2,9 +2,9 @@
 
   <div id="home" class="home-content view-container">
 
-    <div class="mainContent pane" >
+    <div class="mainContent" >
 
-      <ul class="room-ul home-bg" :class="roomName">
+      <ul class="room-ul home-bg blurBgAfter" :class="roomName+' '+(slideShow()?'ac':'')">
         <li v-touch:tap="positionRoom.bind(this, 'childrenRoom')">
           <div class="room-info">
             <label class="room-info-lab">儿童房</label>
@@ -74,12 +74,18 @@
         </li>
       </ul>
 
-      <div class="map" v-touch:tap="positionRoom.bind(this, '')">
-        <img src="static/img/home/bedroomMap.png" alt="">
+      <div class="map animated" :class="map?'bounceIn':'bounceOut'" v-touch:tap="positionRoom.bind(this, '')">
+        <img src="static/img/home/map.png" alt="">
+        <div class="nowRoom" :style="'background:url(static/img/home/'+roomName+'.png) no-repeat 0 0/100% 100%'"></div>
       </div>
 
       <ul class="device" :class="roomName+'Device'" v-touch:doubletap="positionRoom.bind(this, '')">
         <li @click="changeDevice(key,val)" :class="val+' '+key[3]+' '+(key[2]=='0000'?'':'open')" v-for="(key,val) in nowRoomDevice">
+          <div class="prog">
+            <div class="circle l"></div>
+            <div class="circle r"></div>
+            <div class="light"></div>
+          </div>
           <label class="room-switch-title">{{key[0]}}</label>
         </li>
       </ul>
@@ -89,7 +95,7 @@
 
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   created () {
     this.changeFooterStatus(true)
@@ -97,6 +103,7 @@ export default {
   },
   data () {
     return {
+      map: false,
       roomName: '',
       nowRoomDevice: {},
       model302: {
@@ -174,11 +181,13 @@ export default {
         },
         'leaveHome': ['出门', '7324002C', '00000', ''],
         'goHome': ['回家', '7314002C', '0000', '']
-      }
+      },
+      ...mapGetters(['slideShow'])
     }
   },
   methods: {
     positionRoom (x) {
+      x === '' ? this.map = false : this.map = true
       this.roomName = x
       this.nowRoomDevice = this.model302[x]
     },

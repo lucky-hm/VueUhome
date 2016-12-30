@@ -2,17 +2,17 @@
   <div id="neighbor" class="home-content view-container">
     <div class="mainContent pane" >
 
-      <div class="chat-head">
-        <h2 @click="getFriends">邻里</h2>
-        <div class="f_l">
-          <img src="static/img/home/test1.png" alt="">
-          <div class="dib">
-            <p class="name">John</p>
-            <p class="introduced">建筑设计师、A单元3306</p>
-          </div>
-        </div>
-        <div class="f_r"></div>
-      </div>
+      <!--<div class="chat-head">-->
+        <!--<h2>邻里</h2>-->
+        <!--<div class="f_l">-->
+          <!--<img src="static/img/home/test1.png" alt="">-->
+          <!--<div class="dib">-->
+            <!--<p class="name">John</p>-->
+            <!--<p class="introduced">建筑设计师、A单元3306</p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="f_r"></div>-->
+      <!--</div>-->
 
       <h3 class="title">
         <span class="topParent">主目录</span><span>联系人</span>
@@ -76,11 +76,10 @@
   import { mapActions, mapGetters } from 'vuex'
   export default{
     created () {
-      this.changeHeaderStatus(false)
       this.changeFooterStatus(false)
     },
     mounted () {
-      this.getFriends()
+//      this.getFriends()
     },
     data () {
       return {
@@ -88,10 +87,43 @@
         searchVal: '',
         friendsList: [
           {
-            names: '',
-            position: '',
-            area: '',
-            img: ''
+            'name': '陈立翔',
+            'img': 'clx.png',
+            'position': '前端工程师',
+            'area': '深圳市宝安区后瑞北三巷',
+            'phone': '07755559612',
+            'mobile': '15879077879',
+            'enable': true,
+            'records': [
+              {'who': 0, 'info': '你在哪里？'},
+              {'who': 1, 'info': '我在珠海周末要不要聚一聚？'}
+            ]
+          },
+          {
+            'name': '张林林',
+            'img': 'zll.png',
+            'position': '后端工程师',
+            'area': '深圳市宝安区后瑞北三巷',
+            'phone': '07755559612',
+            'mobile': '13970000000',
+            'enable': true,
+            'records': [
+              {'who': 0, 'info': '1111111'},
+              {'who': 1, 'info': '222222222222'}
+            ]
+          },
+          {
+            'name': '郁伟强',
+            'img': 'ywq.jpg',
+            'position': '前端工程师',
+            'area': '深圳市宝安区后瑞北三巷',
+            'phone': '07755559614',
+            'mobile': '13971111111',
+            'enable': true,
+            'records': [
+              {'who': 0, 'info': '3333'},
+              {'who': 1, 'info': '44444444444'}
+            ]
           }
         ],
         ...mapGetters(['user'])

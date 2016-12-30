@@ -1,9 +1,72 @@
 <template>
   <div class="repairBody">
     <div class="schedule">
-      <dl>
+      <dl class="clearfix">
         <dt>墙体维修</dt>
         <dd class="cloud">房屋翻新、旧墙体需要清除装饰重新上漆粉刷，请给清除及粉刷作出工程预算和施工进度、工具请自行安排，尽快回复，谢谢！</dd>
+        <dd class="list">
+          <ul class="clearfix">
+            <li><img src="" alt=""></li>
+            <li><img src="" alt=""></li>
+            <li><img src="" alt=""></li>
+            <li><img src="" alt=""></li>
+          </ul>
+        </dd>
+        <dd class="mt30">
+          <p class="user">李先生&nbsp;(&nbsp;2A栋6B业主&nbsp;)</p>
+          <p class="mobile">135&nbsp;4756&nbsp;4300</p>
+        </dd>
+        <dd class="date">
+          2016年10月1日上午11点30分
+        </dd>
+      </dl>
+      <dl class="clearfix">
+        <dt class="gary tac mt30">技术工程师已上门服务</dt>
+        <dd class="card">
+          <img class="headImg" src="static/img/home/test.png" alt="">
+          <div class="info">
+            <p class="position">维修工程师</p>
+            <p>
+              <span class="name">李强&nbsp;工号0006</span>
+              <span class="mobile">135&nbsp;8866&nbsp;0000</span>
+            </p>
+            <p>评级<i></i><i></i><i></i><i class="off"></i><i class="off"></i></p>
+          </div>
+        </dd>
+        <dd class="date">2016年10月1日上午12点00分</dd>
+      </dl>
+      <dl class="mt30 clearfix">
+        <dt>维修工程处理方案</dt>
+        <dd class="gary fz12">
+          <p>1、乳胶漆                        5桶        100元/桶</p>
+          <p>2、水泥砂浆                   15袋         30元/袋</p>
+          <p>3、专用聚合物砂浆         10袋         50元/袋
+          </p>
+          <p>4、工具由施工人员提供
+          </p>
+          <p>5、工期5天（周六周日非工作日不施工）</p>
+        </dd>
+        <dd class="date">
+          2016年10月1日上午11点30分
+        </dd>
+      </dl>
+      <dl class="clearfix mt30">
+        <dd class="gary tac mt30">工程已完工等待业主验收</dd>
+        <dt class="mt30">工程验收</dt>
+        <dd class="gary mt30">工程进度快，施工完美非常满意！谢谢李师傅，幸苦了！！！</dd>
+        <dd class="list clearfix">
+          <ul>
+            <li><img src="" alt=""></li>
+            <li><img src="" alt=""></li>
+            <li><img src="" alt=""></li>
+            <li><img src="" alt=""></li>
+          </ul>
+        </dd>
+        <dd class="comment mt30">
+          <p><label>服务态度</label><b></b><b></b><b></b><b></b><b></b></p>
+          <p><label>工程品质</label><b></b><b></b><b></b><b></b><b></b></p>
+        </dd>
+        <dd class="date">2016年10月1日上午11点30分</dd>
       </dl>
     </div>
     <dl class="apply">
@@ -35,7 +98,6 @@
     props: ['test'],
     data () {
       return {
-        msg: 'hello vue'
       }
     },
     methods: {
@@ -62,9 +124,22 @@
   /*报修进度*/
   .schedule{
     width:258px;
+    height:356px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
     font-size:12px;
     color:#fff;
     -webkit-font-smoothing: antialiased;
+    .gary{
+      color:#959a9c;
+      font-size:10px;
+    }
+    .tac{
+      text-align: center;
+    }
+    .fz12{
+      font-size:12px;
+    }
     dt{
       font-size:18px;
       font-weight:bold;
@@ -75,6 +150,83 @@
       text-indent: 18px;
       line-height:18px;
       letter-spacing: 1px;
+      color:#959a9c;
+    }
+    .list{
+      margin-top:30px;
+      li{
+        width:42px;height:42px;border-radius:50%;
+        background-color: #fff;float:left;
+        margin-right:10px;overflow:hidden;
+        img{
+          width:100%;
+          height:100%;
+        }
+      }
+    }
+    .mt30{
+      margin-top:30px;
+    }
+    .user {
+      background: url("../assets/img/home/user1.png") no-repeat left 3px;
+      padding-left:20px;
+    }
+    .mobile{
+      background: url("../assets/img/home/phone1.png") no-repeat left 3px;
+      padding-left:20px;
+      margin-top:12px;
+    }
+    .date {
+      color: #959a9c;
+      margin-top:15px;
+      font-size: 10px;
+      background: url("../assets/img/home/ok.png") no-repeat left 4px;
+      float: right;
+      padding-left:12px;
+    }
+    .card{
+      display:-webkit-flex;
+      .position{
+        -webkit-font-smoothing: auto;
+        margin-bottom:2px;
+        font-size:12px;
+      }
+      p{
+        font-size:10px;
+        i {
+          width: 12px;
+          height: 15px;
+          display: inline-block;
+          vertical-align: top;
+          background: url("../assets/img/home/star1.png") no-repeat center 2px;
+          &:nth-child(1){
+             margin-left:5px;
+          }
+          &.off{
+            background: url("../assets/img/home/star2.png") no-repeat center .4px;
+          }
+        }
+      }
+      .headImg{
+        width:50px;height:50px;
+        margin-right:5px;
+        border-radius:50%;
+      }
+      .mobile{
+        padding-left:11px;background-size: 11%;
+        margin-left:12px;background-position: left 2px;
+      }
+    }
+    .comment{
+      line-height:30px;
+      label{
+        margin-right:10px;
+        font-size:10px;
+      }
+      b {
+        background: url("../assets/img/home/star.png") no-repeat left center;
+        display: inline-block;width:19px;height:29px;vertical-align: top;
+      }
     }
   }
   /*报修申请*/

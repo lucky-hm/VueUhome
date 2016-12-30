@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="top-weather">
-      <ul v-touch:tap="weatherShow.bind(this, true)">
+      <ul v-touch:tap="changeSlideStatus.bind(this,true)">
         <li class="nowWeather">
           <h2>{{weatherData[0].date | fNowWeather}}</h2>
           <p>{{weatherData[0].wind}}，{{weatherData[0].weather}}</p>
@@ -52,7 +52,7 @@
             <p>{{val.temperature | fWeather}}</p>
         </li>
       </ul>
-      <div class="slideInfo" :class="weatherDetails?'active':''" v-touch:swiperight="weatherShow.bind(this, false)">
+      <div class="slideInfo" :class="slideShow()?'active':''" v-touch:swiperight="changeSlideStatus.bind(this,false)">
         <ul class="topTitle">
           <!--<li @click="tabControl = 0" :class="tabControl==0?'ac':''">天气</li>-->
           <li @click="tabControl = 1" :class="tabControl==0?'ac':''">信息</li>
@@ -189,7 +189,8 @@
     </mu-dialog>
     <!-- 活动 -->
     <mu-dialog dialogClass="activity" :open="activityStatus" title="Dialog" @close="shadeClick">
-      <div class="list">
+      <div class="list" :class="showList?'':'hide'">
+        <div class="back" @click="showList=false"></div>
         <ul>
           <li>
             <div class="img">
@@ -227,7 +228,7 @@
           </li>
         </ul>
       </div>
-      <div class="details">
+      <div class="details" :class="showList?'hide':''">
         <div class="banner">
           <div class="word">
             <span class="time">12月16日／2016</span>
@@ -239,7 +240,7 @@
           </div>
           <div class="oper">
             <input class="search" type='text'>
-            <button class="more"></button>
+            <button class="more" @click="showList=true"></button>
           </div>
         </div>
         <div class="cont">
@@ -278,11 +279,12 @@
       </div>
       <mu-flat-button slot="actions" primary @click="shadeClick" label="提交"/>
     </mu-dialog>
-    <div id="shade" v-touch:tap="shadeClick" :class="shade==true ? 'ac' : 'hide'"></div>
+    <div id="shade" v-touch:tap="shadeClick" :class="shade==true ? 'ac' : 'hide'">{{slideShow()}}</div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 import repair from './repair'
 export default {
   components: {
@@ -291,7 +293,6 @@ export default {
   data () {
     return {
       nowDate: '2016年12月01日', // 当前时间
-      weatherDetails: false, // 侧边栏显示
       canPlay: true, // 控制播放器进度更新频率
       currentTime: '0', // 当前播放进度
       duration: '0', // 播放总长
@@ -301,13 +302,12 @@ export default {
       activityStatus: false, // 活动弹框显示
       moreStatus: false,
       shade: false, // 弹框遮罩显示
-      textVal: ''
+      textVal: '',
+      showList: false,
+      ...mapGetters(['slideShow']) // 侧边栏显示
     }
   },
   methods: {
-    weatherShow (status) {
-      this.weatherDetails = status
-    },
     loadedmetadata () {
       let audio = document.getElementById('media')
       this.duration = audio.duration
@@ -355,7 +355,8 @@ export default {
     },
     limitThree () {
       this.textVal = this.textVal.substr(0, this.textVal.length - 1)
-    }
+    },
+    ...mapActions(['changeSlideStatus'])
   },
   mounted () {
     var that = this

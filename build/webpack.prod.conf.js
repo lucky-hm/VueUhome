@@ -6,6 +6,9 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+/*2016/12/23 [clx]*/
+baseWebpackConfig.module.loaders[3].query.name = utils.assetsPath('../../img/[name].[hash:7].[ext]')
+/*2016/12/23 [clx]*/
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : config.build.env

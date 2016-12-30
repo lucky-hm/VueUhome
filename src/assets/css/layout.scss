@@ -4,6 +4,9 @@ html,body{overflow: hidden;}
 .animated{
     width: 100%;
     animation-duration: .7s;
+    -webkit-animation-duration: .7s;
+    animation-delay: 0.01s;
+    -webkit-animation-delay: 0.01s;
     position: absolute;top: 0;left: 0;
 }
 .shade{
@@ -56,6 +59,7 @@ html,body{overflow: hidden;}
         }
         .home-content{
             padding-top: 72px;
+            left:0;top:0;
             width: 100%;
             height: 100%;
             position: absolute;;
@@ -139,6 +143,7 @@ html,body{overflow: hidden;}
             width: 120px;
             height: 120px;
             border: 5px solid #188f8a;
+            border-top-color: #fff;
             //border: 5px solid RGBA(67, 236, 200, 0.5);
             border-radius: 50%;
             &:after {
@@ -175,15 +180,23 @@ html,body{overflow: hidden;}
         box-sizing: border-box;text-align: center;
         a {
           display: block;
-          width: 40px;
+          font-weight:normal;
+          text-indent: 0px;
+          line-height:155px;
+          -webkit-font-smoothing: antialiased;
+          font-size:12px;
+          white-space:nowrap;
+          color:#fff;
+          vertical-align: top;
+          width: 62px;
           height: 61px;
           margin-left: 10px;display: inline-block;
-          padding:0 11px;box-sizing: content-box;
+          padding:0px;box-sizing: content-box;
           background-image: url(assets/img/home/profiles.png);
           &:nth-of-type(1) {
-            background-position: -1px -61px;
+            background-position: 1.5px -61px;
             &:hover,&.on{
-                background-position: -1px 0px;
+                background-position: 1.5px 0px;
             }
           }
           &:nth-of-type(2) {

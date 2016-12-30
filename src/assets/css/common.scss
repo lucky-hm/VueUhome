@@ -20,12 +20,90 @@ html {overflow-y: scroll;}
 .hide{display: none;}
 .dib{display: inline-block;}
 .mt10{margin-top: 10px !important;}
+.device li.lamp{
+  &.ac{
+    .light{
+      visibility: visible;
+      -webkit-transform: rotate(360deg);
+    }
+    .circle.l:after{
+      -webkit-transform: rotate(0deg);
+    }
+    .circle.r:after{
+      -webkit-transform: rotate(0deg);
+    }
+  }
+}
+.prog{
+  width:112px;height:112px;position: absolute;top:-33px;left:-33px;
+  -webkit-transform: rotate(55deg);
+  .light{
+    width:100%;height:100%;left:0;top:0px;
+    position: absolute;
+    -webkit-transition: all 1.4s linear;
+    visibility: hidden;
+    &:after{
+      background: url("assets/img/light.png") no-repeat top center/100% 100%;
+      position: absolute;width:22px;height:22px;
+      content:'';left:41px;top:-9px;
+    }
+  }
+  .circle{
+    width:112px;height:112px;
+    position: absolute;
+    &:after{
+      position: absolute;
+      content:' ';
+      background: url("assets/img/circle.png") no-repeat center center;
+      background-size: 100%;
+      width:112px;height:112px;
+      -webkit-transition: all .7s linear;
+    }
+    &.l {
+      clip: rect(0px, 112px, 112px, 56px);
+      &:after {
+        left: 0;
+        top: 0;clip: rect(0px, 112px, 112px, 56px);
+        -webkit-transform: rotate(-180deg);
+      }
+    }
+    &.r {
+      clip: rect(0px, 56px, 112px, 0px);
+      &:after {
+        -webkit-transition-delay: .7s;
+        left: 0;clip:rect(0px, 56px, 112px, 0px);
+        top: 0;-webkit-transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
 body {
   background: url("assets/img/home/bg.png") no-repeat center center / 100% 100%;
 }
 audio{
 	display: none;
 }
+
+.blurBgAfter
+{
+  &:after {
+    background: inherit;
+    width: 218px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: ' ';
+    visibility: hidden;
+    filter: blur(5px);
+  }
+  &.ac:after{
+    visibility: visible;
+  }
+}
+
+
 // mui slider
 .mu-slider-thumb{
   width:8px;height:8px;

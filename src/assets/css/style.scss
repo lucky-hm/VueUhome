@@ -1,4 +1,3 @@
-@import 'animate.scss';
 @import 'common.scss';
 @import 'layout.scss';
 @import 'loginRegister.scss';
@@ -7,81 +6,96 @@
   -webkit-overflow-scrolling : touch; position: relative;
   flex-grow: 10;-webkit-flex-grow:10;height:100%;
   .map {
-    position: absolute;z-index: 5;
-    left: 25px;
+    position: absolute;z-index: 5;width:auto;
+    left: 25px;width:230px;
     top: 25px;
+    img{
+      width:100%;height:100%
+    }
+    .nowRoom{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 .home-bg {
-  background: url("assets/img/home/hdBg.png") no-repeat center center;
-  background-size: 85% 80%;
-  transition: all .7s ease;-webkit-transition: all .7s ease;
-  &.room{
-    li{
+  background: url("assets/img/home/hdBg.png") no-repeat 65% center;
+  background-attachment: fixed;
+  background-size: 85%;
+  transition: all .7s ease;
+  -webkit-transition: all .7s ease;
+  &.room {
+    li {
       visibility: hidden;
     }
   }
-  & > li{
+  & > li {
     position: absolute;
     width: 58px;
     height: 56px;
     background: url("assets/img/home/roomEnter.png") -1px top / 100% 100%;
     &:nth-child(1) {
-      top: 32%;
-      left: 18%;
+      top: 30%;
+      left: 17%;
     }
 
     &:nth-child(2) {
-      left: 33%;
-      top: 19%;
+      left: 32.5%;
+      top: 16%;
     }
 
     &:nth-child(3) {
-      top: 22%;
-      left: 46%;
-      background-image:none;
+      top: 17%;
+      left: 45%;
+      background-image: none;
     }
 
     &:nth-child(4) {
-      top: 22%;
-      left: 55.5%;
-      background-image:none;
+      top: 17%;
+      left: 55%;
+      background-image: none;
     }
 
     &:nth-child(5) {
-      top: 26%;
-      left: 67%;
+      top: 24%;
+      left: 68%;
     }
 
     &:nth-child(6) {
-      top: 50%;
+      top: 45%;
       left: 20%;
     }
 
     &:nth-child(7) {
-      top: 43%;
-      left: 42%;
+      top: 40%;
+      left: 41.2%;
     }
 
     &:nth-child(8) {
-      top: 55%;
-      left: 63%;
+      top: 50%;
+      left: 64%;
     }
 
     &:nth-child(9) {
       top: 64%;
       left: 17%;
-      background-image:none;
+      background-image: none;
     }
 
     &:nth-child(10) {
       position: absolute;
-      top: 70%;
-      left: 38%;
+      top: 64%;
+      left: 37.5%;
       background: url("assets/img/home/entrance.png");
       width: 30px;
       height: 30px;
       background-size: 100% 100%;
+      div{
+        top:40px
+      }
     }
 
     &:nth-child(10):hover {
@@ -90,11 +104,11 @@
 
     &:nth-child(11) {
       position: absolute;
-      top: 68%;
-      left: 48.7%;
+      top: 60%;
+      left: 48.5%;
       width: 46px;
       height: 47px;
-      background-image:none;
+      background-image: none;
       background-size: 100% 100%;
     }
     // .room-ul > li:hover {
@@ -1050,68 +1064,68 @@
   }
 }
 
-.info {
-  position: absolute;
-  color: #fff;
-  top: 0;
-  left: 100%;
-  padding: 0px 5px 0 16px;
-  height: 43px;
-  line-height: 43px;
-  width: 200px;
-  border-radius: 4%;
-  white-space: nowrap;
-  visibility: hidden;
-  background: url(assets/img/home/buttonAll.png) no-repeat 0px 0px;
-}
-
-.info li {
-  background: url(assets/img/home/buttonAll.png) no-repeat -6px -58px;
-  width: 26px;
-  height: 100%;
-  display: inline-block;
-  margin: 0 2px;
-}
-
-.info li:nth-child(2) {
-  background-position-x: -47px;
-}
-
-.info li:nth-child(3) {
-  background-position-x: -84px;
-}
-
-.info li:nth-child(4) {
-  background-position-x: -129px;
-}
-
-.info li:nth-child(5) {
-  background-position-x: -170px;
-}
-
-.info li.active {
-  background: url(assets/img/home/buttonAll.png) no-repeat -6px -97px;
-  width: 26px;
-  height: 100%;
-  display: inline-block;
-  margin: 0 2px;
-}
-
-.info li:nth-child(2).active {
-  background-position-x: -47px;
-}
-
-.info li:nth-child(3).active {
-  background-position-x: -84px;
-}
-
-.info li:nth-child(4).active {
-  background-position-x: -129px;
-}
-
-.info li:nth-child(5).active {
-  background-position-x: -170px;
-}
+//.info {
+//  position: absolute;
+//  color: #fff;
+//  top: 0;
+//  left: 100%;
+//  padding: 0px 5px 0 16px;
+//  height: 43px;
+//  line-height: 43px;
+//  width: 200px;
+//  border-radius: 4%;
+//  white-space: nowrap;
+//  visibility: hidden;
+//  background: url(assets/img/home/buttonAll.png) no-repeat 0px 0px;
+//}
+//
+//.info li {
+//  background: url(assets/img/home/buttonAll.png) no-repeat -6px -58px;
+//  width: 26px;
+//  height: 100%;
+//  display: inline-block;
+//  margin: 0 2px;
+//}
+//
+//.info li:nth-child(2) {
+//  background-position-x: -47px;
+//}
+//
+//.info li:nth-child(3) {
+//  background-position-x: -84px;
+//}
+//
+//.info li:nth-child(4) {
+//  background-position-x: -129px;
+//}
+//
+//.info li:nth-child(5) {
+//  background-position-x: -170px;
+//}
+//
+//.info li.active {
+//  background: url(assets/img/home/buttonAll.png) no-repeat -6px -97px;
+//  width: 26px;
+//  height: 100%;
+//  display: inline-block;
+//  margin: 0 2px;
+//}
+//
+//.info li:nth-child(2).active {
+//  background-position-x: -47px;
+//}
+//
+//.info li:nth-child(3).active {
+//  background-position-x: -84px;
+//}
+//
+//.info li:nth-child(4).active {
+//  background-position-x: -129px;
+//}
+//
+//.info li:nth-child(5).active {
+//  background-position-x: -170px;
+//}
 
 .control {
   position: absolute;
@@ -1324,39 +1338,39 @@
 }
 //房间定位
 .childrenRoom{
-    transform: translate(96%, 41%) scale(3.4);
-    -webkit-transform: translate(96%, 41%) scale(3.4);
+    transform: translate(96%, 56%) scale(3.4);
+    -webkit-transform: translate(96%, 56%) scale(3.4);
     *{
       visibility: hidden;
     }
 }
 
 .subalternRoom{
-    transform: translate(56%, 98%) scale(3.6);-webkit-transform: translate(56%, 98%) scale(3.6);
+    transform: translate(56%, 108%) scale(3.6);-webkit-transform: translate(56%, 108%) scale(3.6);
     *{
       visibility: hidden;
     }
 }
 .masterRoom{
-    transform: translate(-73%, 71%) scale(3.6);-webkit-transform: translate(-73%, 71%) scale(3.6);
+    transform: translate(-73%, 81%) scale(3.6);-webkit-transform: translate(-73%, 81%) scale(3.6);
     *{
       visibility: hidden;
     }
 }
 .kitchenRoom{
-    transform: translate(103%, -31%) scale(3.6);-webkit-transform: translate(110%, -31%) scale(3.6);
+    transform: translate(103%, -5%) scale(3.6);-webkit-transform: translate(110%, -5%) scale(3.6);
     *{
       visibility: hidden;
     }
 }
 .diningRoom{
-    transform: translate(20%, -3%) scale(3.2);-webkit-transform: translate(20%, -3%) scale(3.2);
+    transform: translate(20%, 7%) scale(3.2);-webkit-transform: translate(20%, 7%) scale(3.2);
     *{
       visibility: hidden;
     }
 }
 .livingRoom{
-    transform: translate(-50%, -28%) scale(2.6);-webkit-transform: translate(-50%, -28%) scale(2.6);
+    transform: translate(-50%, -18%) scale(2.6);-webkit-transform: translate(-50%, -18%) scale(2.6);
     *{
       visibility: hidden;
     }
@@ -1529,7 +1543,8 @@
     height: 100%;
     left:0;
     top:0;
-    background-color: rgba(0,0,0,.2);
+    z-index:-1;
+    background-color: rgba(0,0,0,.35);
     pointer-events: none;
   }
   &.active{
@@ -1827,11 +1842,14 @@
     .mt5{
       margin-top:5px;
     }
-    .details{
-      display: none;
-    }
     .list{
       width:810px;height:460px;
+      .back {
+        background: url("assets/img/back.png") no-repeat;
+        position: absolute;
+        width:28px;height:28px;
+        top:5px;left:15px;
+      }
       ul{
         height:100%;width:100%;
         li{

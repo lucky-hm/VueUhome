@@ -10,6 +10,7 @@ const state = {
     enter: 'slideInRight',
     leave: 'slideOutLeft'
   },
+  slideShow: false,
   headerShow: true,
   footerNavShow: true
 }
@@ -32,6 +33,9 @@ const mutations = {
   },
   changeFooterStatus (state, status) {
     state.footerNavShow = status
+  },
+  changeSlideStatus (state, status) {
+    state.slideShow = status
   }
 }
 const actions = {
@@ -43,13 +47,17 @@ const actions = {
   },
   changeFooterStatus: ({ commit }, status) => {
     commit('changeFooterStatus', status)
+  },
+  changeSlideStatus: ({ commit }, status) => {
+    commit('changeSlideStatus', status)
   }
 }
 const getters = {
   routerAnimate: state => state.routerAnimate,
   headerShow: state => state.headerShow,
   footerNavShow: state => state.footerNavShow,
-  user: state => state.user
+  user: state => state.user,
+  slideShow: state => state.slideShow
 }
 export default new Vuex.Store({
   state,
