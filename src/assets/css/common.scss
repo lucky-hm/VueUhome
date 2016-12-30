@@ -20,6 +20,11 @@ html {overflow-y: scroll;}
 .hide{display: none;}
 .dib{display: inline-block;}
 .mt10{margin-top: 10px !important;}
+.gCenter{
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+}
 .device li.lamp{
   &.ac{
     .light{

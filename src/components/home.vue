@@ -1,9 +1,7 @@
 <template>
 
   <div id="home" class="home-content view-container">
-
     <div class="mainContent" >
-
       <ul class="room-ul home-bg blurBgAfter" :class="roomName+' '+(slideShow()?'ac':'')">
         <li v-touch:tap="positionRoom.bind(this, 'childrenRoom')">
           <div class="room-info">
@@ -47,7 +45,6 @@
             <label class="room-info-lab">Restaurant</label>
           </div>
         </li>
-        <!--<li ng-click="moduleChange(1,6)">-->
         <li v-touch:tap="positionRoom.bind(this, 'livingRoom')">
           <div class="room-info">
             <label class="room-info-lab">客厅</label>
@@ -89,14 +86,38 @@
           <label class="room-switch-title">{{key[0]}}</label>
         </li>
       </ul>
-
     </div>
+    <mu-dialog dialogClass="airConditioning" :open="airStatus" title="" @close="">
+      <airConditioning></airConditioning>
+    </mu-dialog>
   </div>
-
 </template>
+<style lang="scss">
+  .mu-dialog.airConditioning {
+    width: 277px;
+    height: 374px;
+    border-radius: 8px;
+    /*background: linear-gradient(rgba(255,255,255,.4),rgba(0,0,0,0.3));*/
+    background: url("../assets/img/opac.png") no-repeat;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    .mu-dialog-body {
+      padding: 0;
+      width:200px;
+      display: -webkit-flex;
+      -webkit-justify-content: center;
+      -webkit-align-items: center;
+    }
+  }
+</style>
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import airConditioning from './airConditioning'
 export default {
+  components: {
+    airConditioning: airConditioning
+  },
   created () {
     this.changeFooterStatus(true)
     this.changeHeaderStatus(true)
@@ -104,6 +125,7 @@ export default {
   data () {
     return {
       map: false,
+      airStatus: true,
       roomName: '',
       nowRoomDevice: {},
       model302: {
