@@ -87,7 +87,7 @@
         </li>
       </ul>
     </div>
-    <mu-dialog dialogClass="airConditioning" :open="airStatus" title="" @close="">
+    <mu-dialog dialogClass="airConditioning" :open="airStatus" title="" @close="airStatus=false">
       <airConditioning></airConditioning>
     </mu-dialog>
   </div>
@@ -103,6 +103,7 @@
     -webkit-justify-content: center;
     -webkit-align-items: center;
     .mu-dialog-body {
+      overflow: visible !important;
       padding: 0;
       width:200px;
       display: -webkit-flex;

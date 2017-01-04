@@ -186,16 +186,14 @@
 }
 
 .main-left-menu {
-  background: url("assets/img/home/welcome_02.png") no-repeat -4px center;
-  background-size: 100% 100%;
+  background: url("assets/img/home/welcome_02.png") no-repeat 40% center;
   width: 50px;
   height: 50px;
   display: block;
 }
 
 .main-left-users {
-  background: url("assets/img/home/welcome_08.png") no-repeat -4px center;
-  background-size: 100% 100%;
+  background: url("assets/img/home/welcome_08.png") no-repeat center center;
   width: 50px;
   height: 50px;
   margin-top: 50px;
@@ -203,8 +201,7 @@
 }
 
 .main-left-call {
-  background: url("assets/img/home/welcome_10.png") no-repeat -4px center;
-  background-size: 100% 100%;
+  background: url("assets/img/home/welcome_10.png") no-repeat center center;
   width: 50px;
   height: 50px;
   margin-top: 50px;
@@ -212,8 +209,7 @@
 }
 
 .main-left-exit {
-  background: url("assets/img/home/welcome_13.png") no-repeat -4px center;
-  background-size: 100% 100%;
+  background: url("assets/img/home/welcome_13.png") no-repeat 60% center;
   width: 50px;
   height: 50px;
   margin-top: 50px;
@@ -1536,6 +1532,7 @@
   width:218px;height:100%;padding-bottom:72px;
   box-sizing:border-box;
   -webkit-box-sizing:border-box;
+  background: url("assets/img/home/slideButton.png") no-repeat left center;
   &:after {
     position: absolute;
     content:' ';

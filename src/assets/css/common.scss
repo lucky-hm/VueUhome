@@ -25,6 +25,9 @@ html {overflow-y: scroll;}
   -webkit-justify-content: center;
   -webkit-align-items: center;
 }
+.mu-overlay{
+  //opacity: .8 !important;
+}
 .device li.lamp{
   &.ac{
     .light{
